@@ -6,8 +6,7 @@ This is the official repository for the UCI Law SBA Outline Bank Laravel 5 appli
 
 Note #1: If you already have an LAMP or nginx+PHP+MySQL stack running on localhost, skip Setup (1/4) and Setup (2/4) to skip to Setup (3/4), which instructs how to install Laravel 5.
 
-Note #2: The following four setup steps were done on a 2015 MacBook Pro (with Retina Display, naturally) running OS X Yosemite 10.10.3 (14D136). Your mileage may vary but feel free to contact me with setup questions at ampodobas@it.ucla.edu.
-
+Note #2: The following four setup steps were done on a 2015 MacBook Pro and a 2015 MacBook, each running OS X El Capital 10.11.2.
 Note #3: For security purposes, the application keys and any salts will be changed prior to the production push. 
 
 ###Setup (1/4): Setup OS Environment (Brew + Cask Tap + PHP + MySQL)
@@ -69,13 +68,13 @@ Note #3: For security purposes, the application keys and any salts will be chang
 	3)	composer global require "laravel/installer=~1.1"
 	4)	echo 'alias laravel='~/.composer/vendor/bin/laravel'' > ~/.bash_profile
 	5)	source ~/.bash_profile
-	6)	laravel new uci_law_bank
-	7)	cd /Users/ampodobas/Sites/uci_law_bank/ && chmod -R 777 storage
-	8)	Chage ‘url’ in config/app.php to 'url' => 'http://localhost/uci_law_bank/',
+	6)	laravel new uci-law-sba-outline-bank
+	7)	cd /Users/ampodobas/Sites/uci-law-sba-outline-bank/ && chmod -R 777 storage
+	8)	Chage ‘url’ in config/app.php to 'url' => 'http://localhost/uci-law-sba-outline-bank/',
 	9)	Change ‘timezone’ in config/app.php to PST
 	10)	add to .env (top-level directory):
 	⁃	DB_HOST=localhost
-	⁃	DB_DATABASE=uci_law_bank
+	⁃	DB_DATABASE=sba-outline-bank
 	⁃	DB_USERNAME=root
 	⁃	DB_PASSWORD=toor
 	11)	Ensnure that mod_rewrite is uncommented
@@ -92,9 +91,9 @@ Note #3: For security purposes, the application keys and any salts will be chang
 
 ##Setup (4/4): Checkout Repo
 
-Option 1: git clone  git@github.com:ampodobas/uci_law_bank.git /Users/{your username}/Sites/
+Option 1: git clone  git@github.com:ampodobas/uci-law-sba-outline-bank.git /Users/{your username}/Sites/
 
-Option 2: cd /Users/{your username}/Sites/ && mkdir uci_law_bank && cd uci_law_bank && wget https://github.com/ampodobas/uci_law_bank/archive/master.zip && unzip master.zip
+Option 2: cd /Users/{your username}/Sites/ && mkdir uci-law-sba-outline-bank && cd uci-law-sba-outline-bank && wget https://github.com/ampodobas/uci-law-sba-outline-bank/archive/master.zip && unzip master.zip
 
 
 

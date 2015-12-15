@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost/sba-outline-bank/public/',
+	'url' => 'http://localhost/uci-law-sba-outline-bank/public/',
 
 	/*
 	|--------------------------------------------------------------------------
