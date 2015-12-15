@@ -1,0 +1,101 @@
+/* Fonts */
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #DADFE1;
+}
+
+/* Testing */
+
+.red {
+	border: 1px solid red !important;
+}
+
+.blue {
+	border: 1px solid blue !important;
+}
+
+.green {
+	border: 1px solid green !important;
+}
+
+
+/* General */
+
+.width_100 {
+	width: 100% !important;
+}
+
+.width_50 {
+	width: 50% !important;
+}
+
+
+
+/* Sidebar */
+
+.clinic_sidebar {
+	background: #16222A; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */            
+}
+
+img.sidebar_uci_logo {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	width: 125px;
+	margin-top: 15px;
+}
+
+a.sidebar_brand {
+	text-align: center;
+	color: #E9D460 !important;
+	font-weight: 300 !important;
+}
+
+.clinic_sidebar li a, li.dropdown a {
+	color: #fff !important;	
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.clinic_sidebar li a:hover, li.dropdown a:hover {
+	color: #67809F !important;	
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.clinic_sidebar .navmenu-nav > .open > a:focus {
+	background-color: #F4B350 !important;
+}
+
+.clinic_sidebar li.dropdown ul.dropdown-menu {
+	background-color: #F9BF3B !important;
+}
+
+p.whoami {
+	text-align: center;
+	color: #fff;
+}
+
+
+/* Card */
+
+.card {
+	
+    background-color: #FFFFFF;
+    box-shadow: 0 19px 22px -20px rgba(0,0,0,0.5),0 4px 11px -3px rgba(0,0,0,0.25);
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 100px;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease;
+}
