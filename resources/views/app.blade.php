@@ -40,7 +40,6 @@
 	<div class="container sba_main_container">
 	
 		<div class="row">
-			<!-- <div class="col-md-12"><p class="pull-right">{{ Auth::user()->user_first_name }}, {{ Auth::user()->user_last_name }}</p></div> -->
 			<div class="col-md-4"><img src="{{ asset('/img/uci_seal.jpg') }}" class="top" /></div>
 			<div class="col-md-8"><h1 class="top">UC Irvine School of Law<span>SBA Outline Bank</span></h1></div>
 		</div>

@@ -35,15 +35,17 @@ Route::controllers([
 
 /* File Uploads and Downloads */
 
-Route::get('upload', 'FileEntryController@index');
-
-Route::get('fileentry/get/{filename}', [
-	'as' => 'getentry', 'uses' => 'FileEntryController@get']);
-Route::post('fileentry/add',[ 
-        'as' => 'addentry', 'uses' => 'FileEntryController@add']);
- 
+Route::group(['middleware' => ['auth', 'authorize']], function(){
+	Route::get('upload', 'FileEntryController@index');
+	
+	Route::get('fileentry/get/{filename}', [
+		'as' => 'getentry', 'uses' => 'FileEntryController@get']);
+	Route::post('fileentry/add',[ 
+	        'as' => 'addentry', 'uses' => 'FileEntryController@add']);
+}); 
 
 /* Browse */
-
-Route::get('browse/professors', 'BrowseController@browse_by_professor');
-Route::get('browse/courses', 'BrowseController@browse_by_course');
+Route::group(['middleware' => ['auth', 'authorize']], function(){
+	Route::get('browse/professors', 'BrowseController@browse_by_professor');
+	Route::get('browse/courses', 'BrowseController@browse_by_course');
+});
