@@ -2,6 +2,9 @@
 
 body {
 	font-family: 'Lato', sans-serif;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: 'Lato', sans-serif;
 	background-color: #DADFE1;
 }
 
@@ -29,6 +32,111 @@ body {
 .width_50 {
 	width: 50% !important;
 }
+
+.center_this {
+	display: table !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.centered {
+	text-align: center !important;
+}
+
+.glyphicon {
+	margin-right: 10px;
+}
+
+
+/* Background Image Slideshow */
+
+#slideshow, img.bgM {
+    width: 100% !important;
+    height: 120% !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+}
+
+
+
+/* jumbotron.css */
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
 
 
 
@@ -74,17 +182,19 @@ a.sidebar_brand {
 	background-color: #F9BF3B !important;
 }
 
-p.whoami {
-	text-align: center;
-	color: #fff;
+
+
+/* Opacity Elements */
+
+.auth_opacity {
+	opacity: .94;
 }
 
 
 /* Card */
 
 .card {
-	
-    background-color: #FFFFFF;
+    background-color: #fff;
     box-shadow: 0 19px 22px -20px rgba(0,0,0,0.5),0 4px 11px -3px rgba(0,0,0,0.25);
     padding: 20px;
     border-radius: 5px;
@@ -99,3 +209,123 @@ p.whoami {
     z-index: 4;
     transition: all 0.3s ease;
 }
+
+.card .input-lg {
+	font-weight: 200 !important;
+	background-color: #BDC3C7 !important;
+	color: #333 !important;
+}
+
+/* Page: Login */
+
+.auth_tab_content {
+	padding-top: 25px;
+}
+
+h3.clinics_login_auth {
+	text-align: center;
+	color: #fff;
+	font-weight: 100;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+img.clinics_login_auth {
+	width: 90px;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.card_auth {
+	width: 400px;
+}
+
+.clinics_form_label {
+	color: #333;
+	font-weight: 400 !important;
+	margin-bottom: 5px !important;
+}
+
+
+
+/* Component: Clinic Button */
+
+.clinic_btn {
+	color: #607D8B;
+}
+
+
+/* Components: Titles and Page Icons */
+
+.page_title_icon_container {
+	border-bottom: 1px solid #607D8B;
+	width: 100%;
+	margin-bottom: 50px;	
+}
+
+h1.page_title {
+	text-align: center;
+	color: #333;
+	font-weight: 100;	
+	margin-bottom: 25px;
+}
+
+h3.title {
+	text-align: center;
+	color: #333;
+	font-weight: 200;
+	margin-top: 50px;
+	margin-bottom: 25px;
+}
+
+img.page_icon {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90px;
+	margin-bottom: 25px;
+}
+
+
+
+/* Components: Tabs and Pills */
+
+.clinics_pills_tabs li a {
+	font-size: 19px;
+	font-weight: 200;
+}
+
+.card_table_container {
+	margin-top: 50px;
+}
+
+.add_new {
+	margin-top: 50px;
+}
+
+
+/* Component: Clinic Modal Customizations */
+
+.clinics_modal_header {
+	background-color: #607D8B;
+}
+
+.clinics_modal_header h4.modal-title {
+	color: #fff;
+	font-weight: 100 !important;
+}
+
+
+/* Page: Access Codes */
+
+
+
+/* Components: Other */
+
+.clinic_permissions_label {
+	width: 400px !important;
+}
+

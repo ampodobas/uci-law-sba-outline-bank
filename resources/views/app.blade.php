@@ -28,40 +28,29 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
+
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="{{ url('/') }}">Laravel</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
+	<!-- Menu -->
+	<div class="container">
+		<div class="header clearfix">
+	        <nav>
+		        <ul class="nav nav-pills pull-right">
 					<li><a href="{{ url('/') }}">Home</a></li>
-                    @if (Auth::check())
-                    <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Roles/Permissions</a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/role_permission') }}">Panel</a></li>
-
-                            <li><a href="{{ URL::route('roles.index') }}">Roles</a></li>
-                            <li><a href="{{ URL::route('permissions.index') }}">Permissions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{{ URL::route('users.index') }}">Users</a></li>
-
-                    @endif
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
+		            @if (Auth::check())
+		            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+		            <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Roles/Permissions</a>
+		                <ul class="dropdown-menu" role="menu">
+		                    <li><a href="{{ url('/role_permission') }}">Panel</a></li>
+		
+		                    <li><a href="{{ URL::route('roles.index') }}">Roles</a></li>
+		                    <li><a href="{{ URL::route('permissions.index') }}">Permissions</a></li>
+		                </ul>
+		            </li>
+		            <li><a href="{{ URL::route('users.index') }}">Users</a></li>
+		
+		            @endif
+		            @if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
@@ -73,14 +62,29 @@
 						</li>
 					@endif
 				</ul>
-			</div>
+	        </nav>
+	    <h3 class="text-muted">Project name</h3>
+	  </div><!-- ./header clearfix -->
+	  <!-- Menu -->
+      
+      	<!-- Main Content -->
+		<div class="container">
+			@include('flash::message')
+			@yield('content')
 		</div>
-	</nav>
-
-    <div class="container">
-        @include('flash::message')
-        @yield('content')
-    </div>
-
+		<!-- Main Content -->
+	
+	  <!-- Footer -->
+      <footer class="footer">
+        <p>© 2015 Company, Inc.</p>
+      </footer>
+      <!-- Footer -->
+      
+	</div><!-- ./container -->
+	
+	
+	
+	  
+	
 </body>
 </html>
