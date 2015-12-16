@@ -30,43 +30,50 @@
 </head>
 
 <body>
-	<!-- Menu -->
-	<div class="container">
-		<div class="header clearfix">
-	        <nav>
-		        <ul class="nav nav-pills pull-right">
-					<li><a href="{{ url('/') }}">Home</a></li>
-		            @if (Auth::check())
-		            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-		            <li class="dropdown">
-		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Roles/Permissions</a>
-		                <ul class="dropdown-menu" role="menu">
-		                    <li><a href="{{ url('/role_permission') }}">Panel</a></li>
+	
+	
+	<div class="container sba_main_container">
 		
+		{{ Auth::user()->user_last_name }}
+		
+		<div class="row">
+			<div class="col-md-4"><img src="{{ asset('/img/uci_seal.jpg') }}" class="top" /></div>
+			<div class="col-md-8"><h1 class="top">UC Irvine School of Law<span>SBA Outline Bank</span></h1></div>
+		</div>
+		
+		
+		<!-- Menu -->
+		<div class="row sba_menu_container">
+	
+	        <nav>
+		        <ul class="nav nav-justified">
+		            @if (Auth::check())
+		            <li class="primary_link"><a data-toggle="modal" data-target="#ModalSearch"><img src="{{ asset('/img/menu/search_white.png') }}" class="menu_icon">Search</a></li>
+		            <li class="primary_link dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/browse_white.png') }}" class="menu_icon">Browse <span class="caret"></span></a>
+		                <ul class="dropdown-menu" role="menu">
+			                <li><a href="{{ URL::route('users.index') }}"><img src="{{ asset('/img/menu/professor_white.png') }}" class="menu_icon">By Professor</a></li>
+		                    <li><a href="{{ url('/role_permission') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
+		                    <li><a href="{{ URL::route('roles.index') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
+		                </ul>
+		            </li>
+		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
+		            <li class="primary_link dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/admin_white.png') }}" class="menu_icon">Admin <span class="caret"></span></a>
+		                <ul class="dropdown-menu" role="menu">
+			                <li><a href="{{ URL::route('users.index') }}">Users</a></li>
+		                    <li><a href="{{ url('/role_permission') }}">Panel</a></li>
 		                    <li><a href="{{ URL::route('roles.index') }}">Roles</a></li>
 		                    <li><a href="{{ URL::route('permissions.index') }}">Permissions</a></li>
 		                </ul>
-		            </li>
-		            <li><a href="{{ URL::route('users.index') }}">Users</a></li>
-		
-		            @endif
-		            @if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-							</ul>
-						</li>
+		            </li>      
+		            <li class="primary_link"><a href="{{ url('/auth/logout') }}"><img src="{{ asset('/img/menu/logout_white.png') }}" class="menu_icon">Logout</a></li>
 					@endif
 				</ul>
 	        </nav>
-	    <h3 class="text-muted">Project name</h3>
-	  </div><!-- ./header clearfix -->
-	  <!-- Menu -->
-      
+	  </div><!-- ./row .sba_menu_container -->
+	<!-- Menu -->
+
       	<!-- Main Content -->
 		<div class="container">
 			@include('flash::message')
@@ -76,15 +83,41 @@
 	
 	  <!-- Footer -->
       <footer class="footer">
-        <p>© 2015 Company, Inc.</p>
+        <p>&copy; The Regents of the University of California. All Rights Reserved.</p>
       </footer>
       <!-- Footer -->
       
 	</div><!-- ./container -->
-	
-	
-	
-	  
+
+<!-- Modal: Search -->
+<div class="modal fade" id="ModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div><!-- ./modal-header -->
+			
+			<div class="modal-body">
+				search
+			</div><!-- modal-body -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div><!-- ./modal-footer -->
+		</div><!-- ./modal-content -->
+	</div><!-- ./modal-dialog -->
+</div><!-- ./modal .fade -->
+<!-- Modal: Search -->
+  
+	<!--
+		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		<div>Icons made by <a href="http://www.flaticon.com/authors/anton-saputro" title="Anton Saputro">Anton Saputro</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		<div>Icons made by <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		<div>Icons made by <a href="http://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+	-->
+		  
 	
 </body>
 </html>

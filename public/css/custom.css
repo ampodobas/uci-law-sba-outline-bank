@@ -5,8 +5,9 @@ body {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	font-family: 'Lato', sans-serif;
-	background-color: #DADFE1;
+	background-color: #DADFE1;    
 }
+
 
 /* Testing */
 
@@ -58,6 +59,292 @@ body {
     left: 0;
     z-index: -9999;
 }
+
+
+/* Main Container */
+
+.sba_main_container {
+	background-color: #fff;
+    box-shadow: 0 19px 22px -20px rgba(0,0,0,0.5),0 4px 11px -3px rgba(0,0,0,0.25);
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 101px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease;
+}
+
+
+/* Top and Menu */
+
+img.top {
+	width: 90px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	float: right;
+}
+
+h1.top {
+	text-align: left;
+	font-weight: 100;
+	font-size: 32px;
+	padding-top: 10px;
+	padding-left: 25px;
+	margin-bottom: 25px;	
+}
+
+h1.top span {
+	display: block;
+	font-size: 24px;
+	padding-top: 10px;	
+}
+
+.sba_menu_container {
+	background-color: #333;
+	height: 100%;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.sba_menu_container li.primary_link a {
+	color: #fff;	
+	font-size: 18px;
+	font-weight: 200;
+	cursor: hand !important;
+}
+
+.sba_menu_container a:hover, li.dropdown a:hover {
+	color: #5C97BF !important;	
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.sba_menu_container .navmenu-nav > ul.dropdown-menu {
+	border: 1px solid red !important;
+}
+
+.sba_menu_container .navmenu-nav > .open > a:focus {
+	background-color: #F4B350 !important;
+}
+
+.sba_menu_container li.dropdown ul.dropdown-menu {
+	background-color: #5C97BF !important;
+}
+
+img.menu_icon {
+	width: 30px;
+	padding: 5px;
+	margin-right: 15px;
+}
+
+/* Auth: Opacity */
+
+.auth_opacity {
+	opacity: .94;
+}
+
+
+/* Components: Standard Page */
+
+h1.page_title {
+	text-align: center;
+	font-weight: 200;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+/* Page: Upload */
+
+.upload_step_row {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.upload_step_row .left {
+	background-color: #F9BF3B;	
+	padding-bottom: 10px;
+	min-height: 101px;
+}
+
+.upload_step_row .left h2 {
+	text-align: center;
+	font-weight: 100;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.upload_step_row .left h4 {
+	text-align: center;
+	font-weight: 100;
+	color: #333;
+}
+
+.upload_step_row .right {
+	background-color: #67809F;
+	min-height: 101px;	
+}
+
+.upload_step_row .right .file_select_container {
+	margin-top: 30px;
+	padding: 10px;
+	background-color: #fff;
+	height: 43px;
+}
+
+.upload_step_row select {
+	margin-top: 30px;	
+}
+
+
+/* Card */
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 19px 22px -20px rgba(0,0,0,0.5),0 4px 11px -3px rgba(0,0,0,0.25);
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 101px;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 4;
+    transition: all 0.3s ease;
+}
+
+.card .input-lg {
+	font-weight: 200 !important;
+	background-color: #BDC3C7 !important;
+	color: #333 !important;
+}
+
+/* Page: Login */
+
+.auth_tab_content {
+	padding-top: 25px;
+}
+
+h3.clinics_login_auth {
+	text-align: center;
+	color: #fff;
+	font-weight: 100;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+img.clinics_login_auth {
+	width: 90px;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.card_auth {
+	width: 400px;
+}
+
+.clinics_form_label {
+	color: #333;
+	font-weight: 400 !important;
+	margin-bottom: 5px !important;
+}
+
+
+
+/* Component: Clinic Button */
+
+.btn_sba, input.btn_sba {
+	color: #fff !important;
+	background-color: #5C97BF;
+	font-size: 19px;
+	font-weight: 200;
+}
+
+
+/* Components: Titles and Page Icons */
+
+.page_title_icon_container {
+	border-bottom: 1px solid #607D8B;
+	width: 100%;
+	margin-bottom: 50px;	
+}
+
+h1.page_title {
+	text-align: center;
+	color: #333;
+	font-weight: 100;	
+	margin-bottom: 25px;
+}
+
+h3.title {
+	text-align: center;
+	color: #333;
+	font-weight: 200;
+	margin-top: 50px;
+	margin-bottom: 25px;
+}
+
+img.page_icon {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90px;
+	margin-bottom: 25px;
+}
+
+
+
+/* Components: Tabs and Pills */
+
+.clinics_pills_tabs li a {
+	font-size: 19px;
+	font-weight: 200;
+}
+
+.card_table_container {
+	margin-top: 50px;
+}
+
+.add_new {
+	margin-top: 50px;
+}
+
+
+/* Component: Clinic Modal Customizations */
+
+.clinics_modal_header {
+	background-color: #607D8B;
+}
+
+.clinics_modal_header h4.modal-title {
+	color: #fff;
+	font-weight: 100 !important;
+}
+
+
+/* Page: Access Codes */
+
+
+
+/* Components: Other */
+
+.clinic_permissions_label {
+	width: 400px !important;
+}
+
+
 
 
 
@@ -136,196 +423,3 @@ body {
     border-bottom: 0;
   }
 }
-
-
-
-
-/* Sidebar */
-
-.clinic_sidebar {
-	background: #16222A; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to top, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to top, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */            
-}
-
-img.sidebar_uci_logo {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	width: 125px;
-	margin-top: 15px;
-}
-
-a.sidebar_brand {
-	text-align: center;
-	color: #E9D460 !important;
-	font-weight: 300 !important;
-}
-
-.clinic_sidebar li a, li.dropdown a {
-	color: #fff !important;	
-	font-size: 18px;
-	font-weight: 200;
-}
-
-.clinic_sidebar li a:hover, li.dropdown a:hover {
-	color: #67809F !important;	
-	font-size: 18px;
-	font-weight: 200;
-}
-
-.clinic_sidebar .navmenu-nav > .open > a:focus {
-	background-color: #F4B350 !important;
-}
-
-.clinic_sidebar li.dropdown ul.dropdown-menu {
-	background-color: #F9BF3B !important;
-}
-
-
-
-/* Opacity Elements */
-
-.auth_opacity {
-	opacity: .94;
-}
-
-
-/* Card */
-
-.card {
-    background-color: #fff;
-    box-shadow: 0 19px 22px -20px rgba(0,0,0,0.5),0 4px 11px -3px rgba(0,0,0,0.25);
-    padding: 20px;
-    border-radius: 5px;
-    min-height: 100px;
-    width: 90%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 4;
-    transition: all 0.3s ease;
-}
-
-.card .input-lg {
-	font-weight: 200 !important;
-	background-color: #BDC3C7 !important;
-	color: #333 !important;
-}
-
-/* Page: Login */
-
-.auth_tab_content {
-	padding-top: 25px;
-}
-
-h3.clinics_login_auth {
-	text-align: center;
-	color: #fff;
-	font-weight: 100;
-	color: #333;
-	margin-bottom: 20px;
-}
-
-img.clinics_login_auth {
-	width: 90px;
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-.card_auth {
-	width: 400px;
-}
-
-.clinics_form_label {
-	color: #333;
-	font-weight: 400 !important;
-	margin-bottom: 5px !important;
-}
-
-
-
-/* Component: Clinic Button */
-
-.clinic_btn {
-	color: #607D8B;
-}
-
-
-/* Components: Titles and Page Icons */
-
-.page_title_icon_container {
-	border-bottom: 1px solid #607D8B;
-	width: 100%;
-	margin-bottom: 50px;	
-}
-
-h1.page_title {
-	text-align: center;
-	color: #333;
-	font-weight: 100;	
-	margin-bottom: 25px;
-}
-
-h3.title {
-	text-align: center;
-	color: #333;
-	font-weight: 200;
-	margin-top: 50px;
-	margin-bottom: 25px;
-}
-
-img.page_icon {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	width: 90px;
-	margin-bottom: 25px;
-}
-
-
-
-/* Components: Tabs and Pills */
-
-.clinics_pills_tabs li a {
-	font-size: 19px;
-	font-weight: 200;
-}
-
-.card_table_container {
-	margin-top: 50px;
-}
-
-.add_new {
-	margin-top: 50px;
-}
-
-
-/* Component: Clinic Modal Customizations */
-
-.clinics_modal_header {
-	background-color: #607D8B;
-}
-
-.clinics_modal_header h4.modal-title {
-	color: #fff;
-	font-weight: 100 !important;
-}
-
-
-/* Page: Access Codes */
-
-
-
-/* Components: Other */
-
-.clinic_permissions_label {
-	width: 400px !important;
-}
-

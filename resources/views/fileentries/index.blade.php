@@ -2,59 +2,89 @@
 @section('content')
 
 
-	
-<div class="well">
-	<h1>Upload</h1>
-	
-	<!-- Form -->
-    <form action="{{route('addentry', [])}}" method="post" enctype="multipart/form-data">
-	    
-	    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	    
-		<div class="form-group">
-			<label for="ProfessorName">Professor Name</label>	
-			<select class="form-control" name="professor_name">
+<h1 class="page_title">Upload Outline</h1>
+
+<!-- Form: Upload File -->
+<form action="{{route('addentry', [])}}" method="post" enctype="multipart/form-data" name="upload">
+    
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    
+    <!-- Upload: Step 1 -->
+    <div class="row upload_step_row">
+	    <div class="col-md-4 left">
+		    <h2>Step 1</h2>
+		    <h4>Professor</h4>
+	    </div>
+	    <div class="col-md-8 right">
+		    <select class="form-control" name="professor_name">
+			    <option value="">Select Professor Name</option>
 				<!-- Include: Professor Names Array -->
 				@include('partials.partial_professor_names')
 				<!-- Include: Professor Names Array -->
-			</select>
-		</div>
-		
-		<div class="form-group">
-			<label for="CourseName">Course Name</label>
-			<input type="text" class="form-control" name="course_name">
-		</div>
-	
-		<input type="hidden" name="submitting_user_email" value="{{ Auth::user()->email }}" />
+		</select>
 
-	    <div class="container">
-		    <div class="col-md-4"> <input type="file" name="filefield"></div>
-		    <br/>
-		    <div class="col-md-4"><input type="submit"></div>
 	    </div>
-       
-    </form>
-    <!-- Form -->
+    </div>
+    <!-- Upload: Step 1 -->
     
-</div><!-- ./well -->
- 
-<div class="well">
-	<h1>Files List</h1>
+    <!-- Upload: Step 2 -->
+    <div class="row upload_step_row">
+	    <div class="col-md-4 left">
+		    <h2>Step 2</h2>
+		    <h4>Course Name</h4>
+	    </div>
+	    <div class="col-md-8 right">
+		    <select class="form-control" name="professor_name">
+			    <option value="">Select Course Title</option>
+				<!-- Include: Course Titles Array -->
+				@include('partials.partial_course_titles')
+				<!-- Include: Course Titles Array -->
+		</select>
+
+	    </div>
+    </div>
+    <!-- Upload: Step 2 -->
+    
+    <!-- Upload: Step 3 -->
+    <div class="row upload_step_row">
+	    <div class="col-md-4 left">
+		    <h2>Step 3</h2>
+		    <h4>Upload PDF</h4>
+	    </div>
+	    <div class="col-md-8 right">
+		    <div class="file_select_container">
+		    	<div class="col-md-4"><input type="file" class="sba_btn" name="filefield"></div>
+		    </div>
+	    </div>
+    </div>
+    <!-- Upload: Step 3 -->
+    
+    <!-- Upload: Step 4 -->
+    <div class="row upload_step_row">
+	    <div class="col-md-4 left">
+		    <h2>Step 4</h2>
+		    <h4>Show You As Contributor?</h4>
+	    </div>
+	    <div class="col-md-8 right">
+		    <select class="form-control" name="professor_name">
+			    <option value="">No</option>
+			    <option value="{{ Auth::user()->email }}" name="submitting_user_email">Yes</option>
+		</select>
+
+	    </div>
+    </div>
+    <!-- Upload: Step 4 -->
+    
+    <hr/>
+    
+    <!-- Upload: Submit -->
+    <div class="row upload_step_row">
+	    <button type="submit" form="upload" value="Upload" class="btn btn-inverted btn-block btn_sba" ><span class="glyphicon glyphicon-cloud-upload"></span>Upload</button>
+    </div>
+    <!-- Upload: Submit -->
 	
-	<div class="row">
-        <ul class="thumbnails">
-			@foreach($entries as $entry)
-            <div class="col-md-2">
-                <div class="thumbnail">
-	                {{$entry->professor_name}}
-	                {{$entry->course_name}}
-	                
-                    <a href="{{route('getentry', $entry->filename)}}">{{$entry->original_filename}}</a>
-                </div>
-            </div>
-			@endforeach
- 		</ul>
-	</div>
-</div><!-- ./well -->
+</form>
+<!-- Form: Upload File -->
+
 
 @endsection

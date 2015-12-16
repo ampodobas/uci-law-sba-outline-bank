@@ -41,7 +41,7 @@ class FileEntryController extends Controller {
 		$entry->original_filename = $file->getClientOriginalName();
 		$entry->filename = $file->getFilename().'.'.$extension;
 		$entry->save();
-		return redirect('fileentry');
+		return redirect('upload');
 		
 	}
 	

@@ -35,7 +35,8 @@ Route::controllers([
 
 /* File Uploads and Downloads */
 
-Route::get('fileentry', 'FileEntryController@index');
+Route::get('upload', 'FileEntryController@index');
+
 Route::get('fileentry/get/{filename}', [
 	'as' => 'getentry', 'uses' => 'FileEntryController@get']);
 Route::post('fileentry/add',[ 
