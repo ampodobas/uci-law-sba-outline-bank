@@ -43,14 +43,14 @@
 			
 					<div class="form-group">
 						<div class="col-md-12">
-							<label class="control-label clinics_form_label">E-Mail Address</label>
+							<label class="control-label clinics_form_label">UCI Lawnet E-Mail:</label>
 							<input type="email" class="form-control input-lg" name="email" value="{{ old('email') }}">
 						</div>
 					</div>
 			
 					<div class="form-group">
 						<div class="col-md-12">
-							<label class="control-label clinics_form_label">Password</label>
+							<label class="control-label clinics_form_label">Password:</label>
 							<input type="password" class="form-control input-lg" name="password">
 						</div>
 					</div>
@@ -90,21 +90,21 @@
 					
 					<div class="form-group">
 						<div class="col-md-12">
-							<label class="control-label clinics_form_label">First Name</label>
+							<label class="control-label clinics_form_label">First Name:</label>
 							<input type="text" class="form-control input-lg" name="user_first_name" value="{{ old('user_first_name') }}">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="col-md-12">
-							<label class="control-label clinics_form_label">Last Name</label>
+							<label class="control-label clinics_form_label">Last Name:</label>
 							<input type="text" class="form-control input-lg" name="user_last_name" value="{{ old('user_last_name') }}">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="col-md-12">
-							<label class="control-label clinics_form_label">Lawnet E-Mail:</label>
+							<label class="control-label clinics_form_label">UCI Lawnet E-Mail:</label>
 							<input type="email" class="form-control input-lg" name="email" value="{{ old('email') }}">
 						</div>
 					</div>
@@ -163,7 +163,7 @@
 
 						<div class="form-group">
 							<div class="col-md-12">
-								<label class="control-label clinics_form_label">Lawnet E-Mail:</label>
+								<label class="control-label clinics_form_label">UCI Lawnet E-Mail:</label>
 								<input type="email" class="form-control input-lg" name="email" value="{{ old('email') }}">
 							</div>
 						</div>
