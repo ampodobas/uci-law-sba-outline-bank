@@ -1,11 +1,16 @@
 @extends('app')
 @section('content')
 
-
 <h1 class="page_title">Upload Outline</h1>
 
+@if (Session::has('message'))
+	<div class="flash alert-info">
+		<p>{{ Session::get('message') }}</p>
+	</div>
+@endif
+
 <!-- Form: Upload File -->
-<form action="{{route('addentry', [])}}" method="post" enctype="multipart/form-data" name="upload">
+<form action="{{route('addentry', [])}}" method="post" enctype="multipart/form-data">
     
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
@@ -34,7 +39,7 @@
 		    <h4>Course Name</h4>
 	    </div>
 	    <div class="col-md-8 right">
-		    <select class="form-control" name="professor_name">
+		    <select class="form-control" name="course_name">
 			    <option value="">Select Course Title</option>
 				<!-- Include: Course Titles Array -->
 				@include('partials.partial_course_titles')
@@ -66,7 +71,7 @@
 		    <h4>Show You As Contributor?</h4>
 	    </div>
 	    <div class="col-md-8 right">
-		    <select class="form-control" name="professor_name">
+		    <select class="form-control" name="submitting_user_email">
 			    <option value="">No</option>
 			    <option value="{{ Auth::user()->email }}" name="submitting_user_email">Yes</option>
 		</select>
@@ -79,6 +84,7 @@
     
     <!-- Upload: Submit -->
     <div class="row upload_step_row">
+	    <input type="submit" value="Submit">
 	    <button type="submit" form="upload" value="Upload" class="btn btn-inverted btn-block btn_sba" ><span class="glyphicon glyphicon-cloud-upload"></span>Upload</button>
     </div>
     <!-- Upload: Submit -->

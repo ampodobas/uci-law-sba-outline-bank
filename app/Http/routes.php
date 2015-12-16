@@ -42,3 +42,8 @@ Route::get('fileentry/get/{filename}', [
 Route::post('fileentry/add',[ 
         'as' => 'addentry', 'uses' => 'FileEntryController@add']);
  
+
+/* Browse */
+
+Route::get('browse/professors', 'BrowseController@browse_by_professor');
+Route::get('browse/courses', 'BrowseController@browse_by_course');

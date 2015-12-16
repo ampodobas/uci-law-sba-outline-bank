@@ -159,6 +159,13 @@ h1.page_title {
 	margin-bottom: 50px;
 }
 
+img.page_icon {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+	margin-bottom: 25px;
+}
 
 /* Page: Upload */
 
@@ -276,16 +283,30 @@ img.clinics_login_auth {
 /* Components: Titles and Page Icons */
 
 .page_title_icon_container {
-	border-bottom: 1px solid #607D8B;
+	border-bottom: 1px solid #efefef;
 	width: 100%;
-	margin-bottom: 50px;	
+	margin-bottom: 50px;
+	margin-top: 50px;	
 }
+
+.page_title_icon_container h2 {
+	text-align: center;
+	color: #333;
+	font-weight: 200;
+}
+
+.page_title_icon_container img.page_icon {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80px;
+}
+
 
 h1.page_title {
 	text-align: center;
 	color: #333;
 	font-weight: 100;	
-	margin-bottom: 25px;
 }
 
 h3.title {
@@ -293,14 +314,6 @@ h3.title {
 	color: #333;
 	font-weight: 200;
 	margin-top: 50px;
-	margin-bottom: 25px;
-}
-
-img.page_icon {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	width: 90px;
 	margin-bottom: 25px;
 }
 

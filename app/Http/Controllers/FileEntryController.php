@@ -29,13 +29,15 @@ class FileEntryController extends Controller {
 		
 		$entry = new Fileentry();
 		
-		$entry->professor_name = Input::get("professor_name");
-		$entry->course_name = Input::get("course_name");
-		$entry->submitting_user_email = Input::get("submitting_user_email");
 		
 		$file = Request::file('filefield');
 		$extension = $file->getClientOriginalExtension();
 		Storage::disk('local')->put($file->getFilename().'.'.$extension,  File::get($file));
+		
+		$entry->professor_name = Input::get("professor_name");
+		$entry->course_name = Input::get("course_name");
+		$entry->submitting_user_email = Input::get("submitting_user_email");
+		
 		
 		$entry->mime = $file->getClientMimeType();
 		$entry->original_filename = $file->getClientOriginalName();

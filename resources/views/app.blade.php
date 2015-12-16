@@ -16,10 +16,17 @@
 	<!-- CSS -->
 	
 	<!-- JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/js/bootstrap.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('/js/jasny-bootstrap.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="{{ asset('/js/jasny-bootstrap.min.js') }}"></script>
 	<!-- JS -->
+	
+	<!-- Data Tables -->
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css">
+	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+	<!-- Data Tables -->
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,17 +37,13 @@
 </head>
 
 <body>
-	
-	
 	<div class="container sba_main_container">
-		
-		{{ Auth::user()->user_last_name }}
-		
+	
 		<div class="row">
+			<!-- <div class="col-md-12"><p class="pull-right">{{ Auth::user()->user_first_name }}, {{ Auth::user()->user_last_name }}</p></div> -->
 			<div class="col-md-4"><img src="{{ asset('/img/uci_seal.jpg') }}" class="top" /></div>
 			<div class="col-md-8"><h1 class="top">UC Irvine School of Law<span>SBA Outline Bank</span></h1></div>
 		</div>
-		
 		
 		<!-- Menu -->
 		<div class="row sba_menu_container">
@@ -52,9 +55,9 @@
 		            <li class="primary_link dropdown">
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/browse_white.png') }}" class="menu_icon">Browse <span class="caret"></span></a>
 		                <ul class="dropdown-menu" role="menu">
-			                <li><a href="{{ URL::route('users.index') }}"><img src="{{ asset('/img/menu/professor_white.png') }}" class="menu_icon">By Professor</a></li>
-		                    <li><a href="{{ url('/role_permission') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
-		                    <li><a href="{{ URL::route('roles.index') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
+			                <li><a href="{{ url('/browse/professors') }}"><img src="{{ asset('/img/menu/professor_white.png') }}" class="menu_icon">By Professor</a></li>
+		                    <li><a href="{{ url('/browse/courses') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
+		                    <li><a href="{{ url('/browse/students') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
 		                </ul>
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
