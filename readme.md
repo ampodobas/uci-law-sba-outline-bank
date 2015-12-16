@@ -2,12 +2,12 @@
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 
-This is the official repository for the UCI Law SBA Outline Bank Laravel 5 application forthcoming in Fall 2015.
+This is the official repository for the UCI Law SBA Outline Bank Laravel 5 application (tentatively forthcoming in January, 2016).
 
-Note #1: If you already have an LAMP or nginx+PHP+MySQL stack running on localhost, skip Setup (1/4) and Setup (2/4) to skip to Setup (3/4), which instructs how to install Laravel 5.
-
-Note #2: The following four setup steps were done on a 2015 MacBook Pro and a 2015 MacBook, each running OS X El Capital 10.11.2.
-Note #3: For security purposes, the application keys and any salts will be changed prior to the production push. 
+Note #1: The present build is alpha 0.4.0. I'll release a beta, then a single release candidate (RC1), then move into production with 1.0.0.
+Note #2: If you already have an LAMP or nginx+PHP+MySQL stack running on localhost, skip Setup (1/4) and Setup (2/4) to skip to Setup (3/4), which instructs how to install Laravel 5.
+Note #3: The following four setup steps were done on a 2015 MacBook Pro and a 2015 MacBook, each running OS X El Capital 10.11.2.
+Note #4: For security purposes, the application keys and any salts will be changed prior to the production push. 
 
 ###Setup (1/4): Setup OS Environment (Brew + Cask Tap + PHP + MySQL)
 
