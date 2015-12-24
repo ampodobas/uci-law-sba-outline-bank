@@ -13,6 +13,7 @@
 	<!-- CSS -->
 	<link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<!-- CSS -->
 	
 	<!-- JS -->
@@ -37,6 +38,25 @@
 </head>
 
 <body>
+
+@if (Auth::check())
+<!-- Permission Role Check -->
+<?php 
+		    
+	/* Get id (the primary key) of this user from the users table */
+	$users_table_pk_id = Auth::user()->id;
+
+	/* Check to see what role_id the user has */
+	$if_admin = DB::table('users')
+        ->join('role_user', 'users.id', '=', 'role_user.user_id')
+		->where('role_user.user_id', '=', $users_table_pk_id)
+        ->select('role_user.role_id')
+        ->get();
+        
+?>   
+<!-- Permission Role Check -->
+@endif
+						
 	<div class="container sba_main_container">
 	
 		<div class="row">
@@ -60,15 +80,18 @@
 		                </ul>
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
-		            <li class="primary_link dropdown">
-		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/admin_white.png') }}" class="menu_icon">Admin <span class="caret"></span></a>
-		                <ul class="dropdown-menu" role="menu">
-			                <li><a href="{{ URL::route('users.index') }}">Users</a></li>
-		                    <li><a href="{{ url('/role_permission') }}">Panel</a></li>
-		                    <li><a href="{{ URL::route('roles.index') }}">Roles</a></li>
-		                    <li><a href="{{ URL::route('permissions.index') }}">Permissions</a></li>
-		                </ul>
-		            </li>      
+		            
+		            <?php /* START LOOP: if the role_id is 1, then show the admin links */ foreach ($if_admin as $item) { if ($item->role_id == 1) { ?>
+			            <li class="primary_link dropdown">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/admin_white.png') }}" class="menu_icon">Admin <span class="caret"></span></a>
+			                <ul class="dropdown-menu" role="menu">
+				                <li><a href="{{ URL::route('users.index') }}">Users</a></li>
+			                    <li><a href="{{ url('/role_permission') }}">Panel</a></li>
+			                    <li><a href="{{ URL::route('roles.index') }}">Roles</a></li>
+			                    <li><a href="{{ URL::route('permissions.index') }}">Permissions</a></li>
+			                </ul>
+			            </li>      
+			         <?php } } /* END LOOP: if the role_id is 1, then show the admin links */  ?>
 		            <li class="primary_link"><a href="{{ url('/auth/logout') }}"><img src="{{ asset('/img/menu/logout_white.png') }}" class="menu_icon">Logout</a></li>
 					@endif
 				</ul>
@@ -97,16 +120,47 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title modal_search" id="myModalLabel"><i class="fa fa-search"></i> Search</h4>
 			</div><!-- ./modal-header -->
 			
 			<div class="modal-body">
-				search
+				
+				<form method="POST" action="{{ url('browse_search_all') }}" id="browse_search_all">
+					
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					
+					<!-- Select Professor -->
+					<div class="row">
+						<div class="col-sm-4"><p class="lead">Select Professor:</div>
+						<div class="col-sm-8">
+							<select class="form-control" name="professor_name">
+							    <option value="">Select A Professor</option>
+								<!-- Include: professor Titles Array -->
+								@include('partials.partial_professor_names')
+								<!-- Include: professor Titles Array -->
+							</select>
+						</div>	
+					</div><!-- ./row -->
+					<!-- Select Professor -->
+					
+					<!-- Select Course -->
+					<div class="row">
+						<div class="col-sm-4"><p class="lead">Select Course:</div>
+						<div class="col-sm-8">
+							<select class="form-control" name="course_name">
+							    <option value="">Select A Course</option>
+								<!-- Include: professor Titles Array -->
+								@include('partials.partial_course_titles')
+								<!-- Include: professor Titles Array -->
+							</select>
+						</div>	
+					</div><!-- ./row -->
+					<!-- Select Course -->
+
+					<button type="submit" form="browse_search_all" class="btn btn-block btn-primary center_this browse_submit_btn">Search <i class="fa fa-search"></i></button>
+					
+				</form>
 			</div><!-- modal-body -->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div><!-- ./modal-footer -->
 		</div><!-- ./modal-content -->
 	</div><!-- ./modal-dialog -->
 </div><!-- ./modal .fade -->

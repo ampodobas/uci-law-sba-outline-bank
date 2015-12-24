@@ -2,6 +2,10 @@
 
 @section('content')
 
+	<div class="row page_title_icon_container">
+		<h2>Edit Role</h2>
+	</div>
+	
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>

@@ -1,6 +1,11 @@
 @extends('app')
 
 @section('content')
+
+	<div class="row page_title_icon_container">
+		<h2>Permissions Assigned to Roles</h2>
+	</div>
+	
     {!! Form::open(['url' => '/role_permission']) !!}
     <table class="table table-striped">
         <thead>

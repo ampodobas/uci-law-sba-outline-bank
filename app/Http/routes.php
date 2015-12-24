@@ -48,4 +48,10 @@ Route::group(['middleware' => ['auth', 'authorize']], function(){
 Route::group(['middleware' => ['auth', 'authorize']], function(){
 	Route::get('browse/professors', 'BrowseController@browse_by_professor');
 	Route::get('browse/courses', 'BrowseController@browse_by_course');
+	Route::get('browse/students', 'BrowseController@browse_by_student');
+	Route::post('browse_search_courses', 'BrowseController@search_by_course');
+	Route::post('browse_search_professors', 'BrowseController@search_by_professor');	
+	Route::post('browse_search_students', 'BrowseController@search_by_student');
+	Route::post('browse_search_all', 'BrowseController@search_all');
+	
 });

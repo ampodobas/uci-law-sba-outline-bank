@@ -163,7 +163,8 @@ img.page_icon {
 	display: table;
 	margin-left: auto;
 	margin-right: auto;
-	width: 100px;
+	width: 65px;
+	margin-top: 25px;
 	margin-bottom: 25px;
 }
 
@@ -285,14 +286,16 @@ img.clinics_login_auth {
 .page_title_icon_container {
 	border-bottom: 1px solid #efefef;
 	width: 100%;
-	margin-bottom: 50px;
-	margin-top: 50px;	
+	margin-bottom: 25px;
+	margin-top: 25px;	
 }
 
 .page_title_icon_container h2 {
 	text-align: center;
 	color: #333;
 	font-weight: 200;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .page_title_icon_container img.page_icon {
@@ -347,7 +350,30 @@ h3.title {
 }
 
 
-/* Page: Access Codes */
+
+/* Components: Search */
+
+.clinic_grey_search {
+	background-color: #ebebeb;
+	min-height: 50px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h4.modal_search {
+	margin-right: 10px;
+	font-weight: 400;
+	font-size: 22px;
+}
+
+h4.modal_search .fa-search {
+	margin-right: 15px;
+}
+
+.fa-cloud-upload {
+	margin-right: 15px;
+}
 
 
 
@@ -357,7 +383,46 @@ h3.title {
 	width: 400px !important;
 }
 
+.clinic_grey_section {
+	background-color: #ebebeb;
+	min-height: 275px;
+	padding: 10px;
+}
 
+.clinic_grey_section h3, .browse_collapse h3 {
+	text-align: center;
+	color: #333;
+	font-weight: 200;
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.clinic_grey_section span.glyphicon {
+	margin-top: 3px;
+	border: 1px solid red;
+}
+
+.browse_submit_btn {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.browse_collapse_btn {
+	margin-top: 73px;
+}
+
+.clinic_grey_section .fa-search {
+	padding-left: 10px;
+}
+
+.clinic_grey_section .fa-caret-square-o-down {
+	padding-right: 10px;
+}
+
+
+.browse_collapse {
+	margin-top: 75px;
+}
 
 
 
@@ -369,6 +434,7 @@ h3.title {
 .footer {
   padding-right: 15px;
   padding-left: 15px;
+  margin-top: 25px;
 }
 
 /* Custom page header */
@@ -417,6 +483,9 @@ h3.title {
 .marketing p + h4 {
   margin-top: 28px;
 }
+
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

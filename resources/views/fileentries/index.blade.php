@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 
-<h1 class="page_title">Upload Outline</h1>
+<h1 class="page_title">Upload An Outline</h1>
 
 @if (Session::has('message'))
 	<div class="flash alert-info">
@@ -10,7 +10,7 @@
 @endif
 
 <!-- Form: Upload File -->
-<form action="{{route('addentry', [])}}" method="post" enctype="multipart/form-data">
+<form action="{{route('addentry', [])}}" method="post" id="upload" enctype="multipart/form-data">
     
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
@@ -44,8 +44,7 @@
 				<!-- Include: Course Titles Array -->
 				@include('partials.partial_course_titles')
 				<!-- Include: Course Titles Array -->
-		</select>
-
+			</select>
 	    </div>
     </div>
     <!-- Upload: Step 2 -->
@@ -84,7 +83,6 @@
     
     <!-- Upload: Submit -->
     <div class="row upload_step_row">
-	    <input type="submit" value="Submit">
 	    <button type="submit" form="upload" value="Upload" class="btn btn-inverted btn-block btn_sba" ><span class="glyphicon glyphicon-cloud-upload"></span>Upload</button>
     </div>
     <!-- Upload: Submit -->

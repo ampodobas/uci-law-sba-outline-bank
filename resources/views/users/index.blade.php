@@ -2,6 +2,10 @@
 
 @section('content')
 
+	<div class="row page_title_icon_container">
+		<h2>Users</h2>
+	</div>
+	
     <table class="table">
         <thead>
         <tr>

@@ -2,6 +2,10 @@
 
 @section('content')
 
+	<div class="row page_title_icon_container">
+		<h2>Add New User</h2>
+	</div>
+	
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -14,7 +18,17 @@
     @endif
 
     {!! Form::open(['route' => 'users.store']) !!}
-
+	
+	<div class="form-group">
+        {!! Form::label('user_first_name', 'First Name') !!}
+        {!! Form::text('user_first_name', null, ['class' => 'form-control']) !!}
+    </div>
+    
+    <div class="form-group">
+        {!! Form::label('user_last_name', 'Last Name') !!}
+        {!! Form::text('user_last_name', null, ['class' => 'form-control']) !!}
+    </div>
+	
     <div class="form-group">
         {!! Form::label('email', 'Email') !!}
         {!! Form::text('email', null, ['class' => 'form-control']) !!}
