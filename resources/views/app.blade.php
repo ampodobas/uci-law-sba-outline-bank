@@ -38,6 +38,8 @@
 </head>
 
 <body>
+	
+<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.0.1</a></div>
 
 @if (Auth::check())
 <!-- Permission Role Check -->
@@ -56,7 +58,7 @@
 ?>   
 <!-- Permission Role Check -->
 @endif
-						
+					
 	<div class="container sba_main_container">
 	
 		<div class="row">
@@ -109,7 +111,7 @@
 		
 		<!-- Footer -->
 		<footer class="footer">
-			<p>&copy; The Regents of the University of California. All Rights Reserved.</p>
+			<p class="centered">&copy; The Regents of the University of California. All Rights Reserved.</p>
 		</footer>
 		<!-- Footer -->
       
@@ -187,9 +189,7 @@
 						</div>	
 					</div><!-- ./row -->
 					<!-- Select Academic Term -->
-					
 				
-
 					<button type="submit" form="browse_search_all" class="btn btn-block btn-primary center_this browse_submit_btn">Search <i class="fa fa-search"></i></button>
 					
 				</form>

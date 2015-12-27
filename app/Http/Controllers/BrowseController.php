@@ -91,7 +91,7 @@ class BrowseController extends Controller {
 	
 	public function browse_by_professor()
 	{
-		$entries_by_professor = Fileentry::whereNotNull('professor_name')->get();
+		$entries_by_professor = FileEntry::whereNotNull('professor_name')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -105,7 +105,7 @@ class BrowseController extends Controller {
 	
 	public function browse_by_course()
 	{
-		$entries_by_course = Fileentry::whereNotNull('course_name')->get();
+		$entries_by_course = FileEntry::whereNotNull('course_name')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -119,7 +119,7 @@ class BrowseController extends Controller {
 	
 	public function browse_by_student()
 	{
-		$entries_by_student = Fileentry::whereNotNull('submitting_user_email')->get();
+		$entries_by_student = FileEntry::whereNotNull('submitting_user_email')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -136,7 +136,7 @@ class BrowseController extends Controller {
 	{
 		$course_name = Input::get('course_name');
 		
-		$query = Fileentry::whereNotNull('course_name')->where('course_name', '=', ''.$course_name.'')->get();
+		$query = FileEntry::whereNotNull('course_name')->where('course_name', '=', ''.$course_name.'')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -152,7 +152,7 @@ class BrowseController extends Controller {
 	{
 		$professor_name = Input::get('professor_name');
 		
-		$query = Fileentry::whereNotNull('professor_name')->where('professor_name', '=', ''.$professor_name.'')->get();
+		$query = FileEntry::whereNotNull('professor_name')->where('professor_name', '=', ''.$professor_name.'')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -168,7 +168,7 @@ class BrowseController extends Controller {
 	{
 		$student_name = Input::get('student_name');
 		
-		$query = Fileentry::whereNotNull('submitting_user_email')->where('submitting_user_email', '=', ''.$student_name.'')->get();
+		$query = FileEntry::whereNotNull('submitting_user_email')->where('submitting_user_email', '=', ''.$student_name.'')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -190,7 +190,7 @@ class BrowseController extends Controller {
 		$year = Input::get('year');
 
 
-		$query = Fileentry::whereCourseNameOrProfessorNameOrAcademicTermOrYear(Input::get('professor_name'), Input::get('professor_name'), Input::get('academic_term'), Input::get('year'))->get();
+		$query = FileEntry::whereCourseNameOrProfessorNameOrAcademicTermOrYear(Input::get('professor_name'), Input::get('professor_name'), Input::get('academic_term'), Input::get('year'))->get();
 
 		/* 
 			http://www.neontsunami.com/posts/dynamic-where-clauses-and-find-methods-in-eloquent-(laravel-4)
@@ -211,23 +211,23 @@ class BrowseController extends Controller {
 	public function year()
 	{
 		
-		$year_2009 = Fileentry::where('year', '=', 2009)->get();
-		$year_2010 = Fileentry::where('year', '=', 2010)->get();
-		$year_2011 = Fileentry::where('year', '=', 2011)->get();
-		$year_2012 = Fileentry::where('year', '=', 2012)->get();
-		$year_2013 = Fileentry::where('year', '=', 2013)->get();
-		$year_2014 = Fileentry::where('year', '=', 2014)->get();
-		$year_2015 = Fileentry::where('year', '=', 2015)->get();
-		$year_2016 = Fileentry::where('year', '=', 2016)->get();
+		$year_2009 = FileEntry::where('year', '=', 2009)->get();
+		$year_2010 = FileEntry::where('year', '=', 2010)->get();
+		$year_2011 = FileEntry::where('year', '=', 2011)->get();
+		$year_2012 = FileEntry::where('year', '=', 2012)->get();
+		$year_2013 = FileEntry::where('year', '=', 2013)->get();
+		$year_2014 = FileEntry::where('year', '=', 2014)->get();
+		$year_2015 = FileEntry::where('year', '=', 2015)->get();
+		$year_2016 = FileEntry::where('year', '=', 2016)->get();
 		
-		$count_year_2009 = Fileentry::where('year', '=', 2009)->count();
-		$count_year_2010 = Fileentry::where('year', '=', 2010)->count();
-		$count_year_2011 = Fileentry::where('year', '=', 2011)->count();
-		$count_year_2012 = Fileentry::where('year', '=', 2012)->count();
-		$count_year_2013 = Fileentry::where('year', '=', 2013)->count();
-		$count_year_2014 = Fileentry::where('year', '=', 2014)->count();
-		$count_year_2015 = Fileentry::where('year', '=', 2015)->count();
-		$count_year_2016 = Fileentry::where('year', '=', 2016)->count();
+		$count_year_2009 = FileEntry::where('year', '=', 2009)->count();
+		$count_year_2010 = FileEntry::where('year', '=', 2010)->count();
+		$count_year_2011 = FileEntry::where('year', '=', 2011)->count();
+		$count_year_2012 = FileEntry::where('year', '=', 2012)->count();
+		$count_year_2013 = FileEntry::where('year', '=', 2013)->count();
+		$count_year_2014 = FileEntry::where('year', '=', 2014)->count();
+		$count_year_2015 = FileEntry::where('year', '=', 2015)->count();
+		$count_year_2016 = FileEntry::where('year', '=', 2016)->count();
 		
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')

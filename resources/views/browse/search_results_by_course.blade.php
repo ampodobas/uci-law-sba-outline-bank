@@ -13,33 +13,12 @@
 		<?php if (!(is_null($course_name))) { echo '<p class="lead centered">'.$course_name.' Outlines</p>'; } ?>	
 	</div>
 	
-	<table id="search_results" class="table table-striped table-bordered dataTable no-footer" cellspacing="0" width="100%" role="grid">
-		<thead>
-			<th><strong>Course</strong></th>
-			<th>Download</th>
-			<th>Professor</th>
-			<th>Student</th>
-			<th>Academic Term</th>
-			<th>Year</th>
-			<th>Uploaded</th>
-		</thead>
-		<tbody>		
+	<div class="clinic_grey_section">
+		@include('partials.partial_table_1of3')
 			@foreach($query as $item)
-			<tr>
-				<td><strong>{{$item->course_name}}</strong></td>
-				<td><a href="{{route('getentry', $item->filename)}}" download>{{$item->original_filename}}</a></td>
-				<td>{{$item->professor_name}}</td>
-				<td>
-					@foreach($join_get_full_name as $name)
-						{{$name->user_last_name}}, {{$name->user_first_name}}
-					@endforeach
-				</td>
-				<td>{{$item->academic_term}}</td>
-				<td>{{$item->year}}</td>				
-				<td>{{$item->created_at}}</td>
-			</tr>
+				@include('partials.partial_table_2of3')
 			@endforeach
-		</tbody>
-	</table>
+		@include('partials.partial_table_3of3')
+	</div><!-- ./clinic_grey_section -->
 
 @endsection

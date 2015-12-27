@@ -3,7 +3,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#entries_by_professor').dataTable();
+			$('#search_results').dataTable();
 		} );
 	</script>
 
@@ -58,30 +58,11 @@
 		<h3>Browse All Professors</h3>
 		
 		<div class="clinic_grey_section">
-			<table id="entries_by_professor" class="table table-striped table-bordered dataTable no-footer" cellspacing="0" width="100%" role="grid">
-				<thead>
-					<th><strong>Professor</strong></th>
-					<th>Download</th>
-					<th>Course</th>
-					<th>Student</th>
-					<th>Uploaded</th>
-				</thead>
-				<tbody>		
-					@foreach($entries_by_professor as $item)
-					<tr>
-						<td><strong>{{$item->professor_name}}</strong></td>
-						<td><a href="{{route('getentry', $item->filename)}}" download>{{$item->original_filename}}</a></td>
-						<td>{{$item->course_name}}</td>
-						<td>
-							@foreach($join_get_full_name as $name)
-								{{$name->user_last_name}}, {{$name->user_first_name}}
-							@endforeach
-						</td>
-						<td>{{$item->created_at}}</td>
-					</tr>
-					@endforeach
-				</tbody>
-			</table>
+			@include('partials.partial_table_1of3')
+				@foreach($entries_by_professor as $item)
+					@include('partials.partial_table_2of3')
+				@endforeach
+			@include('partials.partial_table_3of3')
 		</div><!-- ./clinic_grey_section -->
 		
 	</div><!-- ./collapse -->
