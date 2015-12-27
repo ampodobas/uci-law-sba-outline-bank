@@ -9,6 +9,7 @@ body {
 }
 
 
+
 /* Testing */
 
 .red {
@@ -22,6 +23,7 @@ body {
 .green {
 	border: 1px solid green !important;
 }
+
 
 
 /* General */
@@ -49,6 +51,7 @@ body {
 }
 
 
+
 /* Background Image Slideshow */
 
 #slideshow, img.bgM {
@@ -59,6 +62,34 @@ body {
     left: 0;
     z-index: -9999;
 }
+
+
+
+/* Non Auth */
+
+.sba_top_bar {
+	opacity: .8;
+	background-color: #333;
+	border-bottom: none !important;
+}
+
+.sba_top_bar_ul_container {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sba_top_bar a {
+	font-size: 19px;
+	font-weight: 200;	
+	color: #fff !important;
+	text-align: center;
+}
+
+.sba_top_bar a:hover {
+	background-color: #67809F !important;	
+}
+
 
 
 /* Main Container */
@@ -79,6 +110,7 @@ body {
     z-index: 4;
     transition: all 0.3s ease;
 }
+
 
 
 /* Top and Menu */
@@ -119,14 +151,10 @@ h1.top span {
 	cursor: hand !important;
 }
 
-.sba_menu_container a:hover, li.dropdown a:hover {
-	color: #5C97BF !important;	
+.sba_menu_container a:hover, .sba_menu_container a:focus, .sba_menu_container li.dropdown a:hover {
+	background-color: #67809F !important;	
 	font-size: 18px;
 	font-weight: 200;
-}
-
-.sba_menu_container .navmenu-nav > ul.dropdown-menu {
-	border: 1px solid red !important;
 }
 
 .sba_menu_container .navmenu-nav > .open > a:focus {
@@ -134,7 +162,11 @@ h1.top span {
 }
 
 .sba_menu_container li.dropdown ul.dropdown-menu {
-	background-color: #5C97BF !important;
+	background-color: #67809F !important;
+}
+
+.sba_menu_container li.dropdown ul.dropdown-menu a:hover {
+	background-color: #F4B350 !important;
 }
 
 img.menu_icon {
@@ -143,11 +175,14 @@ img.menu_icon {
 	margin-right: 15px;
 }
 
+
+
 /* Auth: Opacity */
 
 .auth_opacity {
 	opacity: .94;
 }
+
 
 
 /* Components: Standard Page */
@@ -167,6 +202,8 @@ img.page_icon {
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
+
+
 
 /* Page: Upload */
 
@@ -211,6 +248,7 @@ img.page_icon {
 }
 
 
+
 /* Card */
 
 .card {
@@ -235,6 +273,8 @@ img.page_icon {
 	background-color: #BDC3C7 !important;
 	color: #333 !important;
 }
+
+
 
 /* Page: Login */
 
@@ -261,12 +301,44 @@ img.clinics_login_auth {
 
 .card_auth {
 	width: 400px;
+	margin-top: 20%;
 }
 
 .clinics_form_label {
 	color: #333;
 	font-weight: 400 !important;
 	margin-bottom: 5px !important;
+}
+
+
+
+/* Features */
+
+.card_features {
+	width: 80%;
+	margin-top: 25%;
+	min-height: 400px;
+}
+
+.card_features_row {
+	width: 100%;
+	min-height: 200px !important;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.card_features_row h3.left {
+	text-align: left;
+	font-weight: 200;
+}
+
+img.features_icon {
+	width: 70%;
+	max-width: 180px !important;
+	margin-top: 25px;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -279,6 +351,7 @@ img.clinics_login_auth {
 	font-size: 19px;
 	font-weight: 200;
 }
+
 
 
 /* Components: Titles and Page Icons */
@@ -303,6 +376,13 @@ img.clinics_login_auth {
 	margin-left: auto;
 	margin-right: auto;
 	width: 80px;
+}
+
+.github_icon {
+	width: 45px;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -336,6 +416,7 @@ h3.title {
 .add_new {
 	margin-top: 50px;
 }
+
 
 
 /* Component: Clinic Modal Customizations */
@@ -484,6 +565,60 @@ h4.modal_search .fa-search {
   margin-top: 28px;
 }
 
+
+
+/* Component: Btn Group */
+
+.sba_btn_group {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.sba_btn_group a {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 300;
+	min-width: 200px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sba_btn_group .fa {
+	margin-right: 10px !important;
+}
+
+.label_count {
+	margin-top: 1px;
+	margin-left: 5px;
+	float: right;
+}
+
+
+
+/* Browse By Year */
+
+.year_tabs_container {
+	margin-top: 50px;	
+}
+
+p.year {
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.year_ul {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.year_ul li a {
+	font-size: 14px;
+	font-weight: 200;
+}
 
 
 

@@ -20,6 +20,8 @@
 				<th>Download</th>
 				<th>Course</th>
 				<th>Student</th>
+				<th>Academic Term</th>
+				<th>Year</th>
 				<th>Uploaded</th>
 			</thead>
 			<tbody>		
@@ -33,6 +35,8 @@
 							{{$name->user_last_name}}, {{$name->user_first_name}}
 						@endforeach
 					</td>
+					<td>{{$item->academic_term}}</td>
+					<td>{{$item->year}}</td>				
 					<td>{{$item->created_at}}</td>
 				</tr>
 				@endforeach

@@ -8,12 +8,16 @@
 	</script>
 
 	<div class="row page_title_icon_container">
-		<h2>Search Results:</h2>
+		<h2>Search Results</h2>
 		
-		<?php if (!(empty($professor_name)) && empty($course_name)) { echo '<p class="lead centered">Professor '.$professor_name.'</p>'; } ?>
-		<?php if (!(empty($course_name)) && empty($professor_name)) { echo '<p class="lead centered">'.$course_name.'</p>'; } ?>
-		<?php if (!(empty($professor_name)) && !(empty($course_name))) { echo '<p class="lead centered">Professor '.$professor_name.' <br class="clear" /> Course: '.$course_name.'</p>'; } ?>
-			
+		<?php //var_dump($query); ?>
+		
+	
+		<?php if (!(empty($course_name))) { echo '<p class="lead centered">Course:  '.$course_name.'</p>'; } ?>
+		<?php if (!(empty($professor_name))) { echo '<p class="lead centered">Professor:  '.$professor_name.'</p>'; } ?>
+		<?php if (!(empty($academic_term))) { echo '<p class="lead centered">Academic Term:  '.$academic_term.'</p>'; } ?>
+		<?php if (!(empty($year))) { echo '<p class="lead centered">Academic Term:  '.$year.'</p>'; } ?>
+
 	</div>
 	
 	<div class="clinic_grey_section">
@@ -23,6 +27,8 @@
 				<th>Download</th>
 				<th>Course</th>
 				<th>Student</th>
+				<th>Academic Term</th>
+				<th>Year</th>
 				<th>Uploaded</th>
 			</thead>
 			<tbody>		
@@ -36,6 +42,8 @@
 							{{$name->user_last_name}}, {{$name->user_first_name}}
 						@endforeach
 					</td>
+					<td>{{$item->academic_term}}</td>
+					<td>{{$item->year}}</td>				
 					<td>{{$item->created_at}}</td>
 				</tr>
 				@endforeach

@@ -24,12 +24,23 @@
 						
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						
-						<select class="form-control" name="course_name">
-						    <option value="">Select A Course</option>
-							<!-- Include: Course Titles Array -->
-							@include('partials.partial_course_titles')
-							<!-- Include: Course Titles Array -->
-						</select>
+						<div class="col-md-12">
+							<select class="form-control" name="academic_term">
+							    <option value="">Select A Course</option>
+								<!-- Include: Course Titles Array -->
+								@include('partials.partial_course_titles')
+								<!-- Include: Course Titles Array -->
+							</select>
+						</div><!-- ./col-md-12 -->
+						
+						<div class="col-md-12">
+							<select class="form-control" name="course_name">
+							    <option value="">Select A Course</option>
+								<!-- Include: Course Titles Array -->
+								@include('partials.partial_course_titles')
+								<!-- Include: Course Titles Array -->
+							</select>
+						</div><!-- ./col-md-12 -->
 						
 						<button type="submit" form="browse_search_courses" class="btn btn-block btn-primary center_this browse_submit_btn">Search <i class="fa fa-search"></i></button>
 					

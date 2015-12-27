@@ -33,6 +33,15 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+
+/* Non-Auth (Features) */
+
+Route::get('features', function () {
+    return view('non-auth.features');
+});
+
+
+
 /* File Uploads and Downloads */
 
 Route::group(['middleware' => ['auth', 'authorize']], function(){
@@ -53,5 +62,6 @@ Route::group(['middleware' => ['auth', 'authorize']], function(){
 	Route::post('browse_search_professors', 'BrowseController@search_by_professor');	
 	Route::post('browse_search_students', 'BrowseController@search_by_student');
 	Route::post('browse_search_all', 'BrowseController@search_all');
+	Route::get('year', 'BrowseController@year');
 	
 });

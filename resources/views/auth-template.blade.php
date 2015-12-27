@@ -46,6 +46,28 @@
 	
 	<body>
 		
+	<nav class="navbar navbar-default navbar-fixed-top sba_top_bar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+	        <div class="sba_top_bar_ul_container">
+	          <ul class="nav navbar-nav">
+		        <li><a href="{{ url('auth/login') }}">Login</a></li>
+	            <li><a href="{{ url('features') }}">Features</a></li>
+	            <li><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank">GitHub</a></li>
+	          </ul>
+	        </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		
 		<!-- Background Images -->
 		<div id="slideshow">
 			<img src="{{ asset('/img/backgrounds/1.jpg') }}" class="bgM">
@@ -57,7 +79,6 @@
 		
 		<!-- Main Content Container -->
 	    <div class="container">
-		  
 		    @include('flash::message')
 		    @yield('content')
 	    </div><!-- /.container -->

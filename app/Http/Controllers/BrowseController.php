@@ -179,34 +179,24 @@ class BrowseController extends Controller {
 		return view('browse.search_results_by_professor', compact('query', 'professor_name', 'join_get_full_name'));
 		
 	}
-	
+
 	public function search_all(Request $request)
 	{
 		
+		//Inputs
 		$course_name = Input::get('course_name');
 		$professor_name = Input::get('professor_name');
+		$academic_term = Input::get('academic_term');
+		$year = Input::get('year');
+
+
+		$query = Fileentry::whereCourseNameOrProfessorNameOrAcademicTermOrYear(Input::get('professor_name'), Input::get('professor_name'), Input::get('academic_term'), Input::get('year'))->get();
+
+		/* 
+			http://www.neontsunami.com/posts/dynamic-where-clauses-and-find-methods-in-eloquent-(laravel-4)
+			User::firstByAttributes(['email' => 'dwight@example.com', 'first_name' => 'Dwight']);
+		*/
 		
-		//if professor_name provided, but not course_name
-		if (!(empty($professor_name)) && empty($course_name))
-		{
-			$query = Fileentry::whereNotNull('professor_name')->where('professor_name', '=', ''.$professor_name.'')->get();
-		}
-		
-		//if course_name provided, but not professor_name
-		if (!(empty($course_name)) && empty($professor_name))
-		{
-			$query = Fileentry::whereNotNull('course_name')->where('course_name', '=', ''.$course_name.'')->get();
-		}
-		
-		//if course_name AND professor_name provided
-		if (!(empty($professor_name)) && !(empty($course_name)))
-		{
-			$query = Fileentry::whereNotNull('course_name')
-				->whereNotNull('updated_at')
-				->where('course_name', '=', ''.$course_name.'')
-				->where('professor_name', '=', ''.$professor_name.'')
-				->get();
-		}
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
@@ -214,7 +204,38 @@ class BrowseController extends Controller {
             ->take(1)
             ->get();
         
-		return view('browse.search_results_all', compact('query', 'course_name', 'professor_name', 'join_get_full_name'));
+		return view('browse.search_results_all', compact('query', 'course_name', 'professor_name', 'academic_term', 'year', 'join_get_full_name'));
+		
+	}
+	
+	public function year()
+	{
+		
+		$year_2009 = Fileentry::where('year', '=', 2009)->get();
+		$year_2010 = Fileentry::where('year', '=', 2010)->get();
+		$year_2011 = Fileentry::where('year', '=', 2011)->get();
+		$year_2012 = Fileentry::where('year', '=', 2012)->get();
+		$year_2013 = Fileentry::where('year', '=', 2013)->get();
+		$year_2014 = Fileentry::where('year', '=', 2014)->get();
+		$year_2015 = Fileentry::where('year', '=', 2015)->get();
+		$year_2016 = Fileentry::where('year', '=', 2016)->get();
+		
+		$count_year_2009 = Fileentry::where('year', '=', 2009)->count();
+		$count_year_2010 = Fileentry::where('year', '=', 2010)->count();
+		$count_year_2011 = Fileentry::where('year', '=', 2011)->count();
+		$count_year_2012 = Fileentry::where('year', '=', 2012)->count();
+		$count_year_2013 = Fileentry::where('year', '=', 2013)->count();
+		$count_year_2014 = Fileentry::where('year', '=', 2014)->count();
+		$count_year_2015 = Fileentry::where('year', '=', 2015)->count();
+		$count_year_2016 = Fileentry::where('year', '=', 2016)->count();
+		
+		$join_get_full_name = DB::table('file_entries')
+            ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
+            ->select('users.user_first_name', 'users.user_last_name')
+            ->take(1)
+            ->get();
+        
+		return view('browse.year', compact('year_2009', 'year_2010', 'year_2011', 'year_2012', 'year_2013', 'year_2014', 'year_2015', 'year_2016', 'count_year_2009', 'count_year_2010', 'count_year_2011', 'count_year_2012', 'count_year_2013', 'count_year_2014', 'count_year_2015', 'count_year_2016', 'join_get_full_name'));
 		
 	}
 

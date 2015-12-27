@@ -77,6 +77,7 @@
 			                <li><a href="{{ url('/browse/professors') }}"><img src="{{ asset('/img/menu/professor_white.png') }}" class="menu_icon">By Professor</a></li>
 		                    <li><a href="{{ url('/browse/courses') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
 		                    <li><a href="{{ url('/browse/students') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
+		                    <li><a href="{{ url('year') }}"><img src="{{ asset('/img/menu/academic_term_year_white.png') }}" class="menu_icon">By Year</a></li>
 		                </ul>
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
@@ -96,24 +97,26 @@
 					@endif
 				</ul>
 	        </nav>
-	  </div><!-- ./row .sba_menu_container -->
-	<!-- Menu -->
+		</div><!-- ./row .sba_menu_container -->
+		<!-- Menu -->
 
-      	<!-- Main Content -->
+		<!-- Main Content -->
 		<div class="container">
 			@include('flash::message')
 			@yield('content')
 		</div>
 		<!-- Main Content -->
-	
-	  <!-- Footer -->
-      <footer class="footer">
-        <p>&copy; The Regents of the University of California. All Rights Reserved.</p>
-      </footer>
-      <!-- Footer -->
+		
+		<!-- Footer -->
+		<footer class="footer">
+			<p>&copy; The Regents of the University of California. All Rights Reserved.</p>
+		</footer>
+		<!-- Footer -->
       
 	</div><!-- ./container -->
 
+	<a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><img src="{{ asset('/img/github_icon.png') }}" class="github_icon"></a>
+	
 <!-- Modal: Search -->
 <div class="modal fade" id="ModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
@@ -131,7 +134,7 @@
 					
 					<!-- Select Professor -->
 					<div class="row">
-						<div class="col-sm-4"><p class="lead">Select Professor:</div>
+						<div class="col-sm-4"><p class="lead">Professor:</div>
 						<div class="col-sm-8">
 							<select class="form-control" name="professor_name">
 							    <option value="">Select A Professor</option>
@@ -145,7 +148,7 @@
 					
 					<!-- Select Course -->
 					<div class="row">
-						<div class="col-sm-4"><p class="lead">Select Course:</div>
+						<div class="col-sm-4"><p class="lead">Course:</div>
 						<div class="col-sm-8">
 							<select class="form-control" name="course_name">
 							    <option value="">Select A Course</option>
@@ -156,6 +159,36 @@
 						</div>	
 					</div><!-- ./row -->
 					<!-- Select Course -->
+					
+					<!-- Select Academic Term -->
+					<div class="row">
+						<div class="col-sm-4"><p class="lead">Academic Term:</div>
+						<div class="col-sm-8">
+								<select class="form-control" name="academic_term">
+								    <option value="">Select Academic Term</option>
+								    <!-- Include: Academic Terms Array -->
+									@include('partials.partial_academic_terms')
+									<!-- Include: Academic Terms Array -->
+								</select>
+						</div>	
+					</div><!-- ./row -->
+					<!-- Select Academic Term -->
+					
+					<!-- Select Year -->
+					<div class="row">
+						<div class="col-sm-4"><p class="lead">Year:</div>
+						<div class="col-sm-8">
+							<select class="form-control" name="year">
+							    <option value="">Select Year</option>
+							    <!-- Include: Years Array -->
+								@include('partials.partial_years')
+								<!-- Include: Years Array -->
+							</select>
+						</div>	
+					</div><!-- ./row -->
+					<!-- Select Academic Term -->
+					
+				
 
 					<button type="submit" form="browse_search_all" class="btn btn-block btn-primary center_this browse_submit_btn">Search <i class="fa fa-search"></i></button>
 					

@@ -8,6 +8,7 @@ use Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
+use Laracasts\Flash\Flash;
 
 use Input;
 use Redirect;
@@ -37,12 +38,16 @@ class FileEntryController extends Controller {
 		$entry->professor_name = Input::get("professor_name");
 		$entry->course_name = Input::get("course_name");
 		$entry->submitting_user_email = Input::get("submitting_user_email");
-		
+		$entry->academic_term = Input::get("academic_term");
+		$entry->year = Input::get("year");
 		
 		$entry->mime = $file->getClientMimeType();
 		$entry->original_filename = $file->getClientOriginalName();
 		$entry->filename = $file->getFilename().'.'.$extension;
 		$entry->save();
+		
+		Flash::success('File Uploaded');
+		
 		return redirect('upload');
 		
 	}

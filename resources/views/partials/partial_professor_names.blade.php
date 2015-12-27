@@ -86,8 +86,8 @@
 		"WIMER, J.",
 		"WOODSIDE, J.");
 		
-		foreach ($professor_names as $item) {
-			echo '<option value="'.$item.'">'.$item.'</option>';
-		}
+	foreach ($professor_names as $item) {
+		echo '<option value="'.$item.'">'.$item.'</option>';
+	}
 				
 ?>

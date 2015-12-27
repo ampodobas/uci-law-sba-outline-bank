@@ -19,7 +19,7 @@ class FileEntry extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'filename', 'mime', 'original_filename', 'professor_name', 'course_name', 'submitting_user_email', 'created_at', 'updated_at' ];
+    protected $fillable = [ 'filename', 'mime', 'original_filename', 'professor_name', 'course_name', 'submitting_user_email', 'academic_term', 'year', 'created_at', 'updated_at' ];
 
 }
 

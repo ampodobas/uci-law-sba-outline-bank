@@ -9,8 +9,8 @@
 		"Federal Courts",
 	);
 		
-		foreach ($course_titles as $item) {
-			echo '<option value="'.$item.'">'.$item.'</option>';
-		}
+	foreach ($course_titles as $item) {
+		echo '<option value="'.$item.'">'.$item.'</option>';
+	}
 				
 ?>

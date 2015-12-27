@@ -67,6 +67,40 @@
     <div class="row upload_step_row">
 	    <div class="col-md-4 left">
 		    <h2>Step 4</h2>
+		    <h4>Academic Term</h4>
+	    </div>
+	    <div class="col-md-8 right">
+		    <select class="form-control" name="academic_term">
+			    <option value="">Select Academic Term</option>
+			    <!-- Include: Academic Terms Array -->
+				@include('partials.partial_academic_terms')
+				<!-- Include: Academic Terms Array -->
+			</select>
+	    </div>
+    </div>
+    <!-- Upload: Step 4 -->
+    
+    <!-- Upload: Step 5 -->
+    <div class="row upload_step_row">
+	    <div class="col-md-4 left">
+		    <h2>Step 5</h2>
+		    <h4>Select Year</h4>
+	    </div>
+	    <div class="col-md-8 right">
+		    <select class="form-control" name="year">
+			    <option value="">Select Year</option>
+			    <!-- Include: Years Array -->
+				@include('partials.partial_years')
+				<!-- Include: Years Array -->
+			</select>
+	    </div>
+    </div>
+    <!-- Upload: Step 4 -->
+   
+    <!-- Upload: Step 6 -->
+    <div class="row upload_step_row">
+	    <div class="col-md-4 left">
+		    <h2>Step 6</h2>
 		    <h4>Show You As Contributor?</h4>
 	    </div>
 	    <div class="col-md-8 right">
@@ -77,7 +111,7 @@
 
 	    </div>
     </div>
-    <!-- Upload: Step 4 -->
+    <!-- Upload: Step 6 -->
     
     <hr/>
     
