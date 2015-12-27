@@ -617,6 +617,16 @@ p.year {
 }
 
 
+
+/* Dashboard */
+
+.dashboard_me p {
+	text-align: center;
+	font-size: 15px;
+}
+
+
+
 /* Browse By Student */
 
 .browse_by_student_row {

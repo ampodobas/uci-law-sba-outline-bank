@@ -80,6 +80,7 @@
 		                    <li><a href="{{ url('/browse/courses') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
 		                    <li><a href="{{ url('/browse/students') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
 		                    <li><a href="{{ url('year') }}"><img src="{{ asset('/img/menu/academic_term_year_white.png') }}" class="menu_icon">By Year</a></li>
+		                     <li><a href="{{ url('dashboard') }}"><img src="{{ asset('/img/menu/outlines_white.png') }}" class="menu_icon">My Outlines</a></li>
 		                </ul>
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
