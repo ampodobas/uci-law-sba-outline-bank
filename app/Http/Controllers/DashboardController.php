@@ -1,4 +1,13 @@
-<?php namespace App\Http\Controllers;
+<?php 
+	
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\FileEntry;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\Response;
+
 
 class DashboardController extends Controller {
 
@@ -26,6 +35,8 @@ class DashboardController extends Controller {
 
 	public function index()
 	{
+		
+            
 		return view('dashboard.index');
 	}
 

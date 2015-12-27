@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Fileentry;
+use App\FileEntry;
 use Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -38,6 +38,7 @@ class FileEntryController extends Controller {
 		$entry->professor_name = Input::get("professor_name");
 		$entry->course_name = Input::get("course_name");
 		$entry->submitting_user_email = Input::get("submitting_user_email");
+		$entry->submitting_user_id = Input::get("submitting_user_id");
 		$entry->academic_term = Input::get("academic_term");
 		$entry->year = Input::get("year");
 		

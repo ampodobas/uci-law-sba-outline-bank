@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php
 
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Fileentry;
+use App\FileEntry;
 use Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -126,6 +126,7 @@ class BrowseController extends Controller {
             ->select('users.user_first_name', 'users.user_last_name')
             ->take(1)
             ->get();
+          
 		
 		return view('browse.browse_by_student', compact('entries_by_student', 'join_get_full_name'));
 		

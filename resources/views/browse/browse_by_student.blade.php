@@ -1,3 +1,18 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Fileentry;
+use Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\Response;
+
+use Redirect;
+use DB;
+		
+?>
+	
 @extends('app')
 @section('content')
 
@@ -10,65 +25,94 @@
 	<div class="row page_title_icon_container">
 		<h2>Outlines By Student</h2>
 	</div>
+	
 
+	<!-- Last Names -->
 	<div class="row">
-		
-		<!-- Left -->
-		<div class="col-sm-6">
-			<div class="col-sm-12 clinic_grey_section">
-				<h3>Specific Student</h3>
-				<img src="{{ asset('/img/single_student_blue.png') }}" class="page_icon" />
-				
-				<div class="form-group">
-					<form method="POST" action="{{ url('browse_search_students') }}" id="browse_search_students">
-						
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						
-						<select class="form-control" name="student_name">
-						    <option value="">Select A Student</option>
-							<!-- Include: Course Titles Array -->
-							@include('partials.partial_student_name')
-							<!-- Include: Course Titles Array -->
-						</select>
-						
-						<button type="submit" form="browse_search_students" class="btn btn-block btn-primary center_this browse_submit_btn">Search <i class="fa fa-search"></i></button>
-					
-					</form>
-				</div><!-- ./form-group -->
 
-			</div><!-- ./col-sm-12 .clinic_grey_section -->
-		</div>
-		<!-- Left -->
-		
-		<!-- Right -->
-		<div class="col-sm-6">
-			<div class="col-sm-12 clinic_grey_section">
-				<h3>Browse All Students</h3>
-				<img src="{{ asset('/img/student_blue.png') }}" class="page_icon" />
-				<a class="btn btn-block btn-primary center_this browse_collapse_btn" role="button" data-toggle="collapse" href="#collapseSpecificCourse" aria-expanded="false" aria-controls="collapseSpecificCourse"><i class="fa fa-caret-square-o-down"></i> Browse</a>
-			</div><!-- ./col-sm-12 .clinic_grey_section -->
-		</div>
-		<!-- Right -->
-	</div><!-- ./row -->
-	
-	
-	<!-- Collapse Content -->
-	<div class="collapse browse_collapse" id="collapseSpecificCourse">
-		
-		<h3>Browse All Students</h3>
-		
-		
-		<!-- Row: browse_by_student_row -->
-		<div class="row browse_by_student_row">
+		<?php 
 			
+			//Alphabet
+			$array_alphabet = array_merge(range('A', 'Z'));
 			
-		</div>
-		<!-- Row: browse_by_student_row -->
+			foreach ($array_alphabet as $item)
+			{
+				#$query = DB::table('file_entries')->where('submitting_user_last_name', 'like', ''.$item.'%')->get();
+				$query = FileEntry::where('submitting_user_last_name', 'like', ''.$item.'%')->get();
+				
+				$array_alphabet_2 = [];
+				
+				echo '<div class="browse_by_student_row">';
+					
+					echo '<div class="col-md-4">';
+						echo '<h1 class="last_name_initial">'.$item.'</h1>';
+					echo '</div>';
+					foreach ($query as $letter[$item]) {
+						#print_r($letter['B']);
+						
+						echo '<div class="col-md-8 last_names">';
+							$array_alphabet_2[]= $query;
+							
+							echo '<div class="row">';
+								foreach ($array_alphabet_2 as $item2) {
+					
+									foreach ($item2 as $item3) {
+										
+											echo '<p class="lead"><a data-toggle="modal" data-target="#ModalStudentOutlines'.$item3->id.'">'.$item3->submitting_user_last_name.', '.$item3->submitting_user_first_name.'</a></p>';	
+											
+									?>
+									
+									<!-- Modal -->
+									<div class="modal fade" id="ModalStudentOutlines<?php echo $item3->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+									  <div class="modal-dialog" role="document">
+									    <div class="modal-content">
+									      <div class="modal-header browse_by_student_modal_header">
+									        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									        <h4 class="modal-title" id="myModalLabel">Outlines: <span class="gold"><?php echo $item3->submitting_user_last_name.', '.$item3->submitting_user_first_name; ?></span></h4>
+									      </div><!-- ./modal-header -->
+									      <div class="modal-body">
+									      
+									      		<table class="table">
+										      		<tr>
+											      		<th>Outline</th>
+											      		<th>Professor</th>
+											      		<th>Course Name</th>
+											      		<th>Academic Term</th>
+											      		<th>Year</th>
+										      		</tr>
+										      		<tr>
+											      		<td><a href="{{route('getentry', $item3->filename)}}" download>Download</a></td>
+														<td><strong>{{$item3->professor_name}}</strong></td>
+														<td>{{$item3->course_name}}</td>
+														<td>{{$item3->academic_term}}</td>
+														<td>{{$item3->year}}</td>				
+													</tr>	
+									      		</table>
+									      		
+									      </div><!-- ./modal-body -->
+									    </div><!-- ./modal-content -->
+									  </div><!-- ./modal-dialog -->
+									</div><!-- ./modal .fade -->
+									<!-- Modal -->
+									
+								<?php									
+																	
+									}
+										
+								}
+							echo '</div>';
+						echo '</div>';
+					break;
+						
+					}
+				echo '</div>';
+	
+			}
+			//Alphabet
+
+		?>
+	</div>
+	<!-- Last Names -->
 		
-		
-		
-		
-	</div><!-- ./collapse -->
-	<!-- Collapse Content -->
 
 @endsection

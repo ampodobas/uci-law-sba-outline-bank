@@ -108,11 +108,13 @@
 			    <option value="">No</option>
 			    <option value="{{ Auth::user()->email }}" name="submitting_user_email">Yes</option>
 		</select>
-
 	    </div>
     </div>
     <!-- Upload: Step 6 -->
     
+    <!-- Upload: Hidden Fields -->
+    <input type="hidden" name="submitting_user_id" value="" ?>
+    <!-- Upload: Hidden Fields -->
     <hr/>
     
     <!-- Upload: Submit -->

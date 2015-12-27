@@ -105,9 +105,6 @@ body {
     display: table;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    z-index: 4;
-    transition: all 0.3s ease;
 }
 
 
@@ -623,11 +620,37 @@ p.year {
 /* Browse By Student */
 
 .browse_by_student_row {
-	min-height: 250px;
-	border: 1px solid red;
+	min-height: 200px;
+	padding-top: 25px;
+	border-bottom: 1px solid #DADFE1;
 }
 
+.browse_by_student_row .last_names {
+	padding-top: 25px;
+}
 
+.browse_by_student_row a {
+	cursor: hand !important;	
+}
+
+h1.last_name_initial {
+	font-size: 50px;
+	font-weight: 200;
+	text-align: center;
+}
+
+.browse_by_student_modal_header {
+	background-color: #67809F !important;	
+}
+
+.browse_by_student_modal_header h4 {
+	font-weight: 200;
+	color: #fff;
+}
+
+.browse_by_student_modal_header h4 span.gold {
+	color: #F4B350;	
+}
 
 
 /* Component: Ribbon */
