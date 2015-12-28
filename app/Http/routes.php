@@ -42,7 +42,7 @@ Route::get('features', function () {
 
 
 
-/* File Uploads and Downloads */
+/* File Uploads and Downloads (FileEntry) */
 
 Route::group(['middleware' => ['auth', 'authorize']], function(){
 	Route::get('upload', 'FileEntryController@index');
@@ -63,5 +63,16 @@ Route::group(['middleware' => ['auth', 'authorize']], function(){
 	Route::post('browse_search_students', 'BrowseController@search_by_student');
 	Route::post('browse_search_all', 'BrowseController@search_all');
 	Route::get('year', 'BrowseController@year');
+});
+
+
+/* Who Taught What */
+Route::group(['middleware' => ['auth', 'authorize']], function(){
+	Route::resource('wtw', 'WhoTaughtWhatController');
+	Route::get('manage-courses', 'WhoTaughtWhatController@manage_courses');
+	Route::get('manage-professors', 'WhoTaughtWhatController@manage_professors');
+	Route::post('add_new_course', 'WhoTaughtWhatController@store_manage_courses');
+	Route::post('add_new_professor', 'WhoTaughtWhatController@store_manage_professors');
+	
 	
 });

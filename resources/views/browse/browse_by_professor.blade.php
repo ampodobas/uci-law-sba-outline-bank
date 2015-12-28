@@ -43,7 +43,7 @@
 		<!-- Right -->
 		<div class="col-sm-6">
 			<div class="col-sm-12 clinic_grey_section">
-				<h3>Browse All professors</h3>
+				<h3>Browse All Professors</h3>
 				<img src="{{ asset('/img/multiple_professors_blue.png') }}" class="page_icon" />
 				<a class="btn btn-block btn-primary center_this browse_collapse_btn" role="button" data-toggle="collapse" href="#collapseSpecificprofessor" aria-expanded="false" aria-controls="collapseSpecificprofessor"><i class="fa fa-caret-square-o-down"></i> Browse</a>
 			</div><!-- ./col-sm-12 .clinic_grey_section -->

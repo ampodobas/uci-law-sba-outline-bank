@@ -666,6 +666,54 @@ h1.last_name_initial {
 }
 
 
+
+/* Component: Clinic Button Group */
+
+.sba_btn_group {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
+.sba_btn_group a {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 300;
+	min-width: 200px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sba_btn_group_access_codes a {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 300;
+	min-width: 120px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sba_btn_group .fa {
+	margin-right: 10px !important;
+}
+
+.sba_btn_group .label_count {
+	font-size: 15px;
+	margin-top: 1px;
+	margin-left: 5px;
+}
+
+
+/* Pages: Who Taught What (Applies to Courses and Professors) */
+
+a.wtw_add {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
 /* Component: Ribbon */
 
 .corner-ribbon {

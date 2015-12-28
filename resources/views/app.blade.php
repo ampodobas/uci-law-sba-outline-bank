@@ -39,7 +39,7 @@
 
 <body>
 	
-<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.0.1</a></div>
+<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.0.3</a></div>
 
 @if (Auth::check())
 <!-- Permission Role Check -->
@@ -80,7 +80,7 @@
 		                    <li><a href="{{ url('/browse/courses') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
 		                    <li><a href="{{ url('/browse/students') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
 		                    <li><a href="{{ url('year') }}"><img src="{{ asset('/img/menu/academic_term_year_white.png') }}" class="menu_icon">By Year</a></li>
-		                     <li><a href="{{ url('dashboard') }}"><img src="{{ asset('/img/menu/outlines_white.png') }}" class="menu_icon">My Outlines</a></li>
+		                    <li><a href="{{ url('dashboard') }}"><img src="{{ asset('/img/menu/outlines_white.png') }}" class="menu_icon">My Outlines</a></li>
 		                </ul>
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
@@ -89,10 +89,12 @@
 			            <li class="primary_link dropdown">
 			                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/admin_white.png') }}" class="menu_icon">Admin <span class="caret"></span></a>
 			                <ul class="dropdown-menu" role="menu">
-				                <li><a href="{{ URL::route('users.index') }}">Users</a></li>
-			                    <li><a href="{{ url('/role_permission') }}">Panel</a></li>
-			                    <li><a href="{{ URL::route('roles.index') }}">Roles</a></li>
-			                    <li><a href="{{ URL::route('permissions.index') }}">Permissions</a></li>
+				                <li><a href="{{ URL::route('users.index') }}"><img src="{{ asset('/img/menu/settings_white.png') }}" class="menu_icon">Users</a></li>
+			                    <li><a href="{{ url('/role_permission') }}"><img src="{{ asset('/img/menu/settings_white.png') }}" class="menu_icon">Panel</a></li>
+			                    <li><a href="{{ URL::route('roles.index') }}"><img src="{{ asset('/img/menu/settings_white.png') }}" class="menu_icon">Roles</a></li>
+			                    <li><a href="{{ URL::route('permissions.index') }}"><img src="{{ asset('/img/menu/settings_white.png') }}" class="menu_icon">Permissions</a></li>
+			                    <li><a href="{{ url('manage-courses') }}"><img src="{{ asset('/img/menu/settings_white.png') }}" class="menu_icon">Manage Courses</a></li>
+			                    <li><a href="{{ url('manage-professors') }}"><img src="{{ asset('/img/menu/settings_white.png') }}" class="menu_icon">Manage Professors</a></li>
 			                </ul>
 			            </li>      
 			         <?php } } /* END LOOP: if the role_id is 1, then show the admin links */  ?>
@@ -207,6 +209,7 @@
 		<div>Icons made by <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
 		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
 		<div>Icons made by <a href="http://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+		<div>Icons made by <a href="http://www.flaticon.com/authors/fermam-aziz" title="Fermam Aziz">Fermam Aziz</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>http://www.flaticon.com/free-icon/cogwheel-outline_57818#
 	-->
 		  
 	
