@@ -89,11 +89,30 @@ Note #4: For security purposes, the application keys and any salts will be chang
 	13)	To enable column alterations through Migrations, add to the require block of composer.json: "doctrine/dbal": "~2.3"
 	14) run “composer update”
 
-##Setup (4/4): Checkout Repo
+##Setup (4/4): Checkout Repo and install 
 
-Option 1: git clone  git@github.com:ampodobas/uci-law-sba-outline-bank.git /Users/{your username}/Sites/
+###Setup Step 4.1:
 
-Option 2: cd /Users/{your username}/Sites/ && mkdir uci-law-sba-outline-bank && cd uci-law-sba-outline-bank && wget https://github.com/ampodobas/uci-law-sba-outline-bank/archive/master.zip && unzip master.zip
+cd into your web root directory and then run:
+ 
+git clone  git@github.com:ampodobas/uci-law-sba-outline-bank.git /Users/{your username}/Sites/ (or in another directory like /var/www/html)
 
 
+###Setup Step 4.2:
+ 
+Run the following command within the uci-law-sba-outline-bank directory you cloned from GitHub. These are all steps recommended by the official Laravel documentation.
 
+composer self-update; composer update && php artisan cache:clear; sudo chmod -R 777 storage; 
+
+###Setup Step 4.3:
+
+To install the database tables for the user management/permissions/roles functionality and then insert into those tables the necessary data to allow the application to implement that functionality, run the following commands:
+
+php artisan migrate:install; php artisan migrate; php artisan db:seed; 
+
+###Setup Step 4.4:
+
+Review the MySQL dump in uci-law-sba-outline-bank/db_structure/sba-outline-bank-structure-without-Entrust.sql. This contains the structure for everything you must create after Step 4.3 above, and specifically includes the file uploads table, the who_taught_what table (which holds data for courses or professors and is where foreach loops that populate the course or professor drop-down fill their <option> content)
+You will need to import this after you run step 4.3.
+
+###Note On Step 4: between Step 4.3 and Step 4.4, you should be able to import all necessary structure and table data to get started. However, since this can be confusing, we've added a base table with the options you should need to get started into uci-law-sba-outline-bank/db_structure/sba-outline-bank-structure-base.sql
