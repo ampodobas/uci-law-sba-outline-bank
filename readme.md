@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 
+Updated 12.28.2015.
+
 This is the official repository for the UCI Law SBA Outline Bank Laravel 5 application (tentatively forthcoming in January, 2016).
 
 Note #1: The present build is alpha 0.4.0. I'll release a beta, then a single release candidate (RC1), then move into production with 1.0.0.
