@@ -39,7 +39,7 @@ class FileEntryController extends Controller {
 	
 	    // Within the ruleset, the filefield input is required, must be a PDF mime, and must be under 8 megabytes in size
 	    $rules = array(
-	        'filefield' => 'required|mimes:pdf|max:10000'
+	        'filefield' => 'required|mimes:pdf'
 	    );
 	
 	    // Pass the input and rules into the validator

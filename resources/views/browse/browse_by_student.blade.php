@@ -55,15 +55,13 @@ use DB;
 							
 							echo '<div class="row">';
 								foreach ($array_alphabet_2 as $item2) {
-					
-									foreach ($item2 as $item3) {
-										
-											echo '<p class="lead"><a data-toggle="modal" data-target="#ModalStudentOutlines'.$item3->id.'">'.$item3->submitting_user_last_name.', '.$item3->submitting_user_first_name.'</a></p>';	
-											
-									?>
-									
+									foreach ($item2 as $item3) {	
+										echo '<p class="lead"><a data-toggle="modal" data-target="#ModalStudentOutlines'.$item3->submitting_user_id.'">'.$item3->submitting_user_last_name.', '.$item3->submitting_user_first_name.'</a></p>';
+										break;
+									} ?>
+						
 									<!-- Modal -->
-									<div class="modal fade" id="ModalStudentOutlines<?php echo $item3->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+									<div class="modal fade" id="ModalStudentOutlines<?php echo $item3->submitting_user_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 									  <div class="modal-dialog" role="document">
 									    <div class="modal-content">
 									      <div class="modal-header browse_by_student_modal_header">
@@ -72,6 +70,7 @@ use DB;
 									      </div><!-- ./modal-header -->
 									      <div class="modal-body">
 									      
+									      	
 									      		<table class="table">
 										      		<tr>
 											      		<th>Outline</th>
@@ -80,28 +79,30 @@ use DB;
 											      		<th>Academic Term</th>
 											      		<th>Year</th>
 										      		</tr>
-										      		<tr>
-											      		<td><a href="{{route('getentry', $item3->filename)}}" download>Download</a></td>
-														<td><strong>{{$item3->professor_name}}</strong></td>
-														<td>{{$item3->course_name}}</td>
-														<?php 
-															switch ($item3->academic_term) {
-															    case "fall_semester":
-															        echo '<td>Fall Semester</td>';
-															        break;
-															    case "spring_semester":
-															        echo '<td>Spring Semester</td>';
-															        break;
-															    case "short_session":
-															        echo '<td>Short Session</td>';
-															        break;
-															     case "":
-															     	echo '<td></td>';
-															     	break;
-															}
-														?>
-														<td>{{$item3->year}}</td>				
-													</tr>	
+											      	<?php foreach ($item2 as $item3) { ?>
+											      		<tr>
+												      		<td><a href="{{route('getentry', $item3->filename)}}" download>Download</a></td>
+															<td><strong>{{$item3->professor_name}}</strong></td>
+															<td>{{$item3->course_name}}</td>
+															<?php 
+																switch ($item3->academic_term) {
+																    case "fall_semester":
+																        echo '<td>Fall Semester</td>';
+																        break;
+																    case "spring_semester":
+																        echo '<td>Spring Semester</td>';
+																        break;
+																    case "short_session":
+																        echo '<td>Short Session</td>';
+																        break;
+																     case "":
+																     	echo '<td></td>';
+																     	break;
+																}
+															?>
+															<td>{{$item3->year}}</td>				
+														</tr>	
+													<?php } //$item3 ?>
 									      		</table>
 									      		
 									      </div><!-- ./modal-body -->
@@ -109,15 +110,14 @@ use DB;
 									  </div><!-- ./modal-dialog -->
 									</div><!-- ./modal .fade -->
 									<!-- Modal -->
-									
-								<?php									
-																	
-									}
-										
-								}
+								
+									<?php  } ?>									
+																
+							<?php
+						
 							echo '</div>';
 						echo '</div>';
-					break;
+				break;
 						
 					}
 				echo '</div>';

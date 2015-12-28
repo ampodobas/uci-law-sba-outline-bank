@@ -24,7 +24,7 @@
 			<!-- Text -->
 			<div class="col-sm-8">
 				<h3 class="left">Document-Focused Search</h3>
-				<p>Upload verified PDFs attributing one or more of a specific course, professor, semester, or year. This allows classmates search for outlines from any of these categories. Also, by pre-populating professor names and course titles (instead of allowing users to input them), the problem of two students respectively uploading a &quot;CrimPro&quot; and &quot;Criminal Procedure&quot; outline for the same class is avoided.</p>
+				<p>Upload verified PDFs attributing one or more of a specific course, professor, semester, or year. This allows classmates search for outlines from any of these categories. Also, by pre-populating professor names and course titles (instead of allowing users to input them), the problem of two students respectively uploading an outline and listing the class as either &quot;CrimPro&quot; and &quot;Criminal Procedure,&quot; when in fact the class is the same one, is avoided.</p>
 			</div>
 			<!-- Text -->			
 		</div>

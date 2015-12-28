@@ -34,7 +34,7 @@ use Auth;
 			$query = FileEntry::where('submitting_user_id', '=', ''.$this_user_id.'')->get();
 		?>
 	
-		<h2>Welcome, {{ Auth::user()->user_last_name }}, {{ Auth::user()->user_first_name }}</div>
+		<h2>Welcome, {{ Auth::user()->user_first_name }}</div>
 
 	</div><!-- ./row .page_title_icon_container -->
 
