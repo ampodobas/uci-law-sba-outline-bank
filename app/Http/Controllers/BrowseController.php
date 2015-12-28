@@ -126,8 +126,7 @@ class BrowseController extends Controller {
             ->select('users.user_first_name', 'users.user_last_name')
             ->take(1)
             ->get();
-          
-		
+        
 		return view('browse.browse_by_student', compact('entries_by_student', 'join_get_full_name'));
 		
 	}
@@ -137,8 +136,8 @@ class BrowseController extends Controller {
 	{
 		$course_name = Input::get('course_name');
 		
-		$query = FileEntry::whereNotNull('course_name')->where('course_name', '=', ''.$course_name.'')->get();
-
+		$query = FileEntry::whereNotNull('course_name')->where('course_name', '=', ''.$course_name.'')->select('file_entries.*')->get();
+		
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
             ->select('users.user_first_name', 'users.user_last_name')
@@ -152,9 +151,9 @@ class BrowseController extends Controller {
 	public function search_by_professor(Request $request)
 	{
 		$professor_name = Input::get('professor_name');
-		
-		$query = FileEntry::whereNotNull('professor_name')->where('professor_name', '=', ''.$professor_name.'')->get();
 
+		$query = FileEntry::whereNotNull('professor_name')->where('professor_name', '=', ''.$professor_name.'')->select('file_entries.*')->get();
+		
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
             ->select('users.user_first_name', 'users.user_last_name')
@@ -169,7 +168,7 @@ class BrowseController extends Controller {
 	{
 		$student_name = Input::get('student_name');
 		
-		$query = FileEntry::whereNotNull('submitting_user_email')->where('submitting_user_email', '=', ''.$student_name.'')->get();
+		$query = FileEntry::whereNotNull('submitting_user_email')->where('submitting_user_email', '=', ''.$student_name.'')->select('file_entries.*')->get();
 
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')

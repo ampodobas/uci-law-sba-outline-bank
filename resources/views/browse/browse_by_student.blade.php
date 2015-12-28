@@ -56,7 +56,7 @@ use DB;
 							echo '<div class="row">';
 								foreach ($array_alphabet_2 as $item2) {
 									foreach ($item2 as $item3) {	
-										echo '<p class="lead"><a data-toggle="modal" data-target="#ModalStudentOutlines'.$item3->submitting_user_id.'">'.$item3->submitting_user_last_name.', '.$item3->submitting_user_first_name.'</a></p>';
+										echo '<p class="lead"><a data-toggle="modal" data-target="#ModalStudentOutlines'.$item3->submitting_user_id.'">'.$item3->submitting_user_last_name.', '.$item3->submitting_user_first_name.'</a> (Class of '.$item3->submitting_user_projected_graduation_year.')</p>';
 										break;
 									} ?>
 						
@@ -81,9 +81,31 @@ use DB;
 										      		</tr>
 											      	<?php foreach ($item2 as $item3) { ?>
 											      		<tr>
-												      		<td><a href="{{route('getentry', $item3->filename)}}" download>Download</a></td>
-															<td><strong>{{$item3->professor_name}}</strong></td>
-															<td>{{$item3->course_name}}</td>
+															<!-- Professor Name -->
+															<?php 	
+																if (isset($item3->professor_name)) {
+																	echo '<td>'.$item3->professor_name.'</td>';	
+																} else {
+																	echo '<td><label class="label label-danger">Not Provided</danger></td>';
+																}
+															?>
+															<!-- Professor Name -->
+															
+															<!-- Filename -->
+															<td><a href="{{route('getentry', $item3->filename)}}" download>Download</a></td>
+															<!-- Filename -->
+															
+															<!-- Course Name -->
+															<?php 	
+																if (isset($item3->course_name)) {
+																	echo '<td>'.$item3->course_name.'</td>';	
+																} else {
+																	echo '<td><label class="label label-danger">Not Provided</danger></td>';
+																}
+															?>
+															<!-- Course Name -->
+															
+															<!-- Academic Term -->
 															<?php 
 																switch ($item3->academic_term) {
 																    case "fall_semester":
@@ -96,11 +118,22 @@ use DB;
 																        echo '<td>Short Session</td>';
 																        break;
 																     case "":
-																     	echo '<td></td>';
+																     	echo '<td><label class="label label-danger">Not Provided</danger></td>';
 																     	break;
 																}
 															?>
-															<td>{{$item3->year}}</td>				
+															<!-- Academic Term -->
+															
+															<!-- Year -->
+															<?php 	
+																if (isset($item3->year)) {
+																	echo '<td>'.$item3->year.'</td>';	
+																} else {
+																	echo '<td><label class="label label-danger">Not Provided</danger></td>';
+																}
+															?>
+															<!-- Year -->
+																	
 														</tr>	
 													<?php } //$item3 ?>
 									      		</table>
@@ -111,13 +144,13 @@ use DB;
 									</div><!-- ./modal .fade -->
 									<!-- Modal -->
 								
-									<?php  } ?>									
+								<?php  } ?>									
 																
-							<?php
+								<?php
 						
 							echo '</div>';
 						echo '</div>';
-				break;
+						break;
 						
 					}
 				echo '</div>';

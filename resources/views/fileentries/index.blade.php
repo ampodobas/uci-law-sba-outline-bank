@@ -95,27 +95,14 @@
 			</select>
 	    </div>
     </div>
-    <!-- Upload: Step 4 -->
-   
-    <!-- Upload: Step 6 -->
-    <div class="row upload_step_row">
-	    <div class="col-md-4 left">
-		    <h2>Step 6</h2>
-		    <h4>Show You As Contributor?</h4>
-	    </div>
-	    <div class="col-md-8 right">
-		    <select class="form-control" name="submitting_user_email">
-			    <option value="{{ Auth::user()->email }}" name="submitting_user_email">Yes</option>
-			    <option value="">No</option>    
-		</select>
-	    </div>
-    </div>
-    <!-- Upload: Step 6 -->
+    <!-- Upload: Step 5 -->
     
     <!-- Upload: Hidden Fields -->
     <input type="hidden" name="submitting_user_id" value="{{ Auth::user()->id }}" />
+    <input type="hidden" name="submitting_user_email" value="{{ Auth::user()->email }}" />
     <input type="hidden" name="submitting_user_first_name" value="{{ Auth::user()->user_first_name }}" />
     <input type="hidden" name="submitting_user_last_name" value="{{ Auth::user()->user_last_name }}" />
+    <input type="hidden" name="submitting_user_projected_graduation_year" value="{{ Auth::user()->projected_graduation_year }}" />
     <!-- Upload: Hidden Fields -->
     
     <hr/>

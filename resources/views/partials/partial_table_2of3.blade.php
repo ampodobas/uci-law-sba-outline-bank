@@ -1,12 +1,39 @@
 <tr>
-	<td><strong>{{$item->professor_name}}</strong></td>
+	<!-- Professor Name -->
+	<?php 	
+		if (isset($item->professor_name)) {
+			echo '<td>'.$item->professor_name.'</td>';	
+		} else {
+			echo '<td><label class="label label-danger">Not Provided</danger></td>';
+		}
+	?>
+	<!-- Professor Name -->
+	
+	<!-- Filename -->
 	<td><a href="{{route('getentry', $item->filename)}}" download>Download</a></td>
-	<td>{{$item->course_name}}</td>
-	<td>
-		@foreach($join_get_full_name as $name)
-			{{$name->user_last_name}}, {{$name->user_first_name}}
-		@endforeach
-	</td>
+	<!-- Filename -->
+	
+	<!-- Course Name -->
+	<?php 	
+		if (isset($item->course_name)) {
+			echo '<td>'.$item->course_name.'</td>';	
+		} else {
+			echo '<td><label class="label label-danger">Not Provided</danger></td>';
+		}
+	?>
+	<!-- Course Name -->
+	
+	<!-- Submitting User (Last Name, First Name) -->
+	<?php 	
+		if (isset($item->course_name)) {
+			echo '<td>'.$item->submitting_user_last_name.', '.$item->submitting_user_first_name.'</td>';	
+		} else {
+			echo '<td><label class="label label-danger">Not Provided</danger></td>';
+		}
+	?>
+	<!-- Submitting User (Last Name, First Name) -->
+
+	<!-- Academic Term -->
 	<?php 
 		switch ($item->academic_term) {
 		    case "fall_semester":
@@ -19,10 +46,19 @@
 		        echo '<td>Short Session</td>';
 		        break;
 		     case "":
-		     	echo '<td></td>';
+		     	echo '<td><label class="label label-danger">Not Provided</danger></td>';
 		     	break;
 		}
 	?>
-	<td>{{$item->year}}</td>				
-	<td>{{$item->created_at}}</td>
+	<!-- Academic Term -->
+	
+	<!-- Year -->
+	<?php 	
+		if (isset($item->year)) {
+			echo '<td>'.$item->year.'</td>';	
+		} else {
+			echo '<td><label class="label label-danger">Not Provided</danger></td>';
+		}
+	?>
+	<!-- Year -->
 </tr>

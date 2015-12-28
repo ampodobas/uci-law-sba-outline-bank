@@ -30,6 +30,11 @@
     </div>
     
     <div class="form-group">
+    	{!! Form::label('projected_graduation_year', 'Projected Graduation Year') !!}
+        {!! Form::text('projected_graduation_year', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
         {!! Form::label('email', 'Email') !!}
         {!! Form::text('email', null, ['class' => 'form-control']) !!}
     </div>

@@ -6,6 +6,5 @@
 		<th>Student</th>
 		<th>Academic Term</th>
 		<th>Year</th>
-		<th>Uploaded</th>
 	</thead>
 	<tbody>	

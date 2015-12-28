@@ -13,7 +13,7 @@
 		<?php if (!(empty($course_name))) { echo '<p class="lead centered">Course:  '.$course_name.'</p>'; } ?>
 		<?php if (!(empty($professor_name))) { echo '<p class="lead centered">Professor:  '.$professor_name.'</p>'; } ?>
 		<?php if (!(empty($academic_term))) { echo '<p class="lead centered">Academic Term:  '.$academic_term.'</p>'; } ?>
-		<?php if (!(empty($year))) { echo '<p class="lead centered">Academic Term:  '.$year.'</p>'; } ?>
+		<?php if (!(empty($year))) { echo '<p class="lead centered">Year:  '.$year.'</p>'; } ?>
 
 	</div>
 	

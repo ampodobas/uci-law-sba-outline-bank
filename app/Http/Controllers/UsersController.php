@@ -88,7 +88,8 @@ class UsersController extends Controller {
 		
 		$user->user_first_name = $request->get('user_first_name');
 		$user->user_last_name = $request->get('user_last_name');
-		
+		$user->projected_graduation_year = $request->get('projected_graduation_year');
+
 		$user->email = $request->get('email');
 		if($request->get('password'))
 		{
