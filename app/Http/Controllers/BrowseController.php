@@ -93,7 +93,13 @@ class BrowseController extends Controller {
 	{
 		$entries_by_professor = FileEntry::whereNotNull('professor_name')->get();
 		
-		return view('browse.browse_by_professor', compact('entries_by_professor'));
+		$join_get_full_name = DB::table('file_entries')
+            ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
+            ->select('users.user_first_name', 'users.user_last_name')
+            ->take(1)
+            ->get();
+            
+		return view('browse.browse_by_professor', compact('entries_by_professor', 'join_get_full_name'));
 		
 	}
 	

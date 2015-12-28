@@ -68,6 +68,8 @@ class FileEntryController extends Controller {
 			$entry->academic_term = Input::get("academic_term");
 			$entry->year = Input::get("year");
 			$entry->submitting_user_id = Input::get("submitting_user_id");
+			$entry->submitting_user_first_name = Input::get("submitting_user_first_name");
+			$entry->submitting_user_last_name = Input::get("submitting_user_last_name");
 			
 			$entry->mime = $file->getClientMimeType();
 			$entry->original_filename = $file->getClientOriginalName();

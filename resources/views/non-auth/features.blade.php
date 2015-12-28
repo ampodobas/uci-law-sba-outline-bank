@@ -72,7 +72,7 @@
 			<!-- Text -->
 			<div class="col-sm-8">
 				<h3 class="left">Rock-Solid Technical Foundation</h3>
-				<p>The UCI Law Outline Bank is developed on a rock-solid foundation of modern web application frameworks, middleware, and technologies. Based on the <a href="{{ url('https://laravel.com/docs/5.2')}}" target="_blank">Laravel 5.1</a> MVC framework, the Outline Bank incorporates the <a href="{{ url('http://getbootstrap.com/') }}" target="_blank">Twitter Bootstrap</a>, <a href="{{ url('https://github.com/LaravelCollective/html')}}" target="_blank">Laravel Collective, <a href="{{ url('https://github.com/Zizaco/entrust')}}" target="_blank">zizaco/entrust</a>, and the <a href="{{ url('https://github.com/ucla-it-security/iso-elk-stack')}}" target="_blank">the ELK Stack</a>.</p>
+				<p>The UCI Law Outline Bank is developed on a rock-solid foundation of a modern, scalable, and secure web application framework and middleware. Based on the <a href="{{ url('https://laravel.com/docs/5.2')}}" target="_blank">Laravel 5.1</a> MVC framework, the Outline Bank incorporates the <a href="{{ url('http://getbootstrap.com/') }}" target="_blank">Twitter Bootstrap</a>, <a href="{{ url('https://github.com/LaravelCollective/html')}}" target="_blank">Laravel Collective, <a href="{{ url('https://github.com/Zizaco/entrust')}}" target="_blank">zizaco/entrust</a>, and the <a href="{{ url('https://github.com/ucla-it-security/iso-elk-stack')}}" target="_blank">the ELK Stack</a>.</p>
 			</div>
 			<!-- Text -->				
 		</div>

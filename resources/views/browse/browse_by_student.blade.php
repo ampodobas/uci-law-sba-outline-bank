@@ -84,7 +84,22 @@ use DB;
 											      		<td><a href="{{route('getentry', $item3->filename)}}" download>Download</a></td>
 														<td><strong>{{$item3->professor_name}}</strong></td>
 														<td>{{$item3->course_name}}</td>
-														<td>{{$item3->academic_term}}</td>
+														<?php 
+															switch ($item3->academic_term) {
+															    case "fall_semester":
+															        echo '<td>Fall Semester</td>';
+															        break;
+															    case "spring_semester":
+															        echo '<td>Spring Semester</td>';
+															        break;
+															    case "short_session":
+															        echo '<td>Short Session</td>';
+															        break;
+															     case "":
+															     	echo '<td></td>';
+															     	break;
+															}
+														?>
 														<td>{{$item3->year}}</td>				
 													</tr>	
 									      		</table>

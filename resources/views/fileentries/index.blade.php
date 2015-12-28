@@ -105,8 +105,8 @@
 	    </div>
 	    <div class="col-md-8 right">
 		    <select class="form-control" name="submitting_user_email">
-			    <option value="">No</option>
 			    <option value="{{ Auth::user()->email }}" name="submitting_user_email">Yes</option>
+			    <option value="">No</option>    
 		</select>
 	    </div>
     </div>
@@ -114,7 +114,10 @@
     
     <!-- Upload: Hidden Fields -->
     <input type="hidden" name="submitting_user_id" value="{{ Auth::user()->id }}" />
+    <input type="hidden" name="submitting_user_first_name" value="{{ Auth::user()->user_first_name }}" />
+    <input type="hidden" name="submitting_user_last_name" value="{{ Auth::user()->user_last_name }}" />
     <!-- Upload: Hidden Fields -->
+    
     <hr/>
     
     <!-- Upload: Submit -->

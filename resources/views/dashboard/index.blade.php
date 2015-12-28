@@ -83,11 +83,43 @@ use Auth;
 		<h3>Outlines That I've Uploaded</h3>
 		
 		<div class="clinic_grey_section">
-			@include('partials.partial_table_1of3')
-				@foreach($query as $item)
-					@include('partials.partial_table_2of3')
-				@endforeach
-			@include('partials.partial_table_3of3')
+			<table id="search_results" class="table table-striped table-bordered dataTable no-footer" cellspacing="0" width="100%" role="grid">
+				<thead>
+					<th><strong>Professor</strong></th>
+					<th>Download</th>
+					<th>Course</th>		
+					<th>Academic Term</th>
+					<th>Year</th>
+					<th>Uploaded</th>
+				</thead>
+				<tbody>	
+					@foreach($query as $item)
+						<tr>
+							<td><strong>{{$item->professor_name}}</strong></td>
+							<td><a href="{{route('getentry', $item->filename)}}" download>Download</a></td>
+							<td>{{$item->course_name}}</td>
+							<?php 
+								switch ($item->academic_term) {
+								    case "fall_semester":
+								        echo '<td>Fall Semester</td>';
+								        break;
+								    case "spring_semester":
+								        echo '<td>Spring Semester</td>';
+								        break;
+								    case "short_session":
+								        echo '<td>Short Session</td>';
+								        break;
+								     case "":
+								     	echo '<td></td>';
+								     	break;
+								}
+							?>
+							<td>{{$item->year}}</td>				
+							<td>{{$item->created_at}}</td>
+						</tr>
+					@endforeach
+				</tbody>
+		</table>
 		</div><!-- ./clinic_grey_section -->
 		
 	</div><!-- ./collapse -->
