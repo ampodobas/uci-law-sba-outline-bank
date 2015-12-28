@@ -117,4 +117,5 @@ php artisan migrate:install; php artisan migrate; php artisan db:seed;
 Review the MySQL dump in uci-law-sba-outline-bank/db_structure/sba-outline-bank-structure-without-Entrust.sql. This contains the structure for everything you must create after Step 4.3 above, and specifically includes the file uploads table, the who_taught_what table (which holds data for courses or professors and is where foreach loops that populate the course or professor drop-down fill their <option> content)
 You will need to import this after you run step 4.3.
 
-###Note On Step 4: between Step 4.3 and Step 4.4, you should be able to import all necessary structure and table data to get started. However, since this can be confusing, we've added a base table with the options you should need to get started into uci-law-sba-outline-bank/db_structure/sba-outline-bank-structure-base.sql
+###Note On Step 4: 
+From both Step 4.3 and Step 4.4, you should be able to import all necessary structure and table data to get started. However, since this can be confusing, we've added a base table with the options you should need to get started into uci-law-sba-outline-bank/db_structure/sba-outline-bank-structure-base.sql
