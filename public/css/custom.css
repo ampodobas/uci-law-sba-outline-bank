@@ -464,6 +464,9 @@ h4.modal_search .fa-search {
 	background-color: #ebebeb;
 	min-height: 275px;
 	padding: 10px;
+	width: 100%;
+	overflow-x: scroll !important;
+	overflow-y: scroll !important;
 }
 
 .clinic_grey_section h3, .browse_collapse h3 {

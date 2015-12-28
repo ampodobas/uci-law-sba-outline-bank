@@ -113,7 +113,7 @@
     <!-- Upload: Step 6 -->
     
     <!-- Upload: Hidden Fields -->
-    <input type="hidden" name="submitting_user_id" value="" ?>
+    <input type="hidden" name="submitting_user_id" value="{{ Auth::user()->id }}" />
     <!-- Upload: Hidden Fields -->
     <hr/>
     
