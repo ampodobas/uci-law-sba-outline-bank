@@ -23,19 +23,25 @@ Note #2: The following four setup steps were done on a 2015 MacBook Pro and a 20
 		&& sudo apachectl restart \
 		&& brew doctor \
 		&& brew update \
-		&& brew install php54 --with-mysql \
-		&& brew install php54-xdebug \
-		&& brew install mcrypt php54-mcrypt \
+		&& brew install php55 --with-mysql \
+		&& brew install php55-xdebug \
+		&& brew install mcrypt php55-mcrypt \
 		&& sudo apachectl restart \
-		&& echo "export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"" >> ~/.bash_profile \
+		&& echo "export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"" >> ~/.bash_profile \
 		&& echo "export export PATH="/usr/local/mysql/bin:$PATH"" >> ~/.bash_profile \
-		&& source ~/.bash_profile \
-		&& brew install mysql \
+		&& source ~/.bash_profile;
+		
+		
+		Install MySQL via Homebrew or download and install it from https://dev.mysql.com/downloads/mysql/:
+		
+		####Brew Method:
+		brew install mysql \
 		&& mkdir -p ~/Library/LaunchAgents \
 		&& ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents \
 		&& launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist \
-		&& mysql_secure_installation \
-		&& then run mysql.server start
+		&& mysql_secure_installation; 
+		
+		then execute: "mysql.server start" 
 
 ###Setup (2/4): Apache Web Server
 
@@ -63,6 +69,8 @@ Note #2: The following four setup steps were done on a 2015 MacBook Pro and a 20
 
 ### Setup (3/4): Laravel 5 Installation
 
+	Run steps 1-9 in Terminal
+	
 	1)	curl -sS https://getcomposer.org/installer | php
 	2)	mv composer.phar /usr/local/bin/composer
 	3)	composer global require "laravel/installer=~1.1"
@@ -80,14 +88,40 @@ Note #2: The following four setup steps were done on a 2015 MacBook Pro and a 20
 	11)	Ensnure that mod_rewrite is uncommented
 	12)	Remove .htaccess in public and add this:
 
-	Options +FollowSymLinks
-	RewriteEngine On
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^ index.php [L]
+		Options +FollowSymLinks
+		RewriteEngine On
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteRule ^ index.php [L]
 	
-	13)	To enable column alterations through Migrations, add to the require block of composer.json: "doctrine/dbal": "~2.3"
-	14) run “composer update”
+	13) To enable column alterations through Migrations and to enable the Form class, add the following to the require block of composer.json: 
+		
+		"require": {
+			"doctrine/dbal": "~2.3",
+		    	"laravelcollective/html": "~5.0"
+		}
+		
+	14) execute "composer update && php artisan cache:clear ; sudo chmod -R 777 storage;"
+	15) Next, add your new provider to the providers array of config/app.php:
+		  
+		  'providers' => [
+		    // ...
+		    'Collective\Html\HtmlServiceProvider',
+		    // ...
+		  ],
+		  
+	16) Finally, add two class aliases to the aliases array of config/app.php:
+		 
+		  'aliases' => [
+		    // ...
+		      'Form' => 'Collective\Html\FormFacade',
+		      'Html' => 'Collective\Html\HtmlFacade',
+		    // ...
+		  ],
+		  
+	17) execute "composer update && php artisan cache:clear ; sudo chmod -R 777 storage;"
+	18) Finaly, regenerate the default salts and keys by executing "php artisan key:generate"
+
 
 ##Setup (4/4): Checkout Repo and install 
 
