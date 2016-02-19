@@ -55,7 +55,7 @@
 	<body>
 		
 	<nav class="navbar navbar-default navbar-fixed-top sba_top_bar">
-		<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.0.1</a></div>
+		<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.1.5</a></div>
 
       <div class="container">
         <div class="navbar-header">

@@ -27,6 +27,12 @@
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 	<!-- Data Tables -->
+	
+	<!-- C3 (Charts) -->
+	<link rel="stylesheet" href="{{ asset('/css/c3.css') }}">
+	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="{{ asset('/js/c3.min.js') }}"></script>
+	<!-- C3 (Charts) -->
 
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -39,7 +45,7 @@
 
 <body>
 	
-<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.0.3</a></div>
+<div class="corner-ribbon top-left sticky gradient shadow"><a href="{{ url('https://github.com/ampodobas/uci-law-sba-outline-bank') }}" target="_blank"><i class="fa fa-cog"></i>Beta v1.1.5</a></div>
 
 @if (Auth::check())
 <!-- Permission Role Check -->
@@ -72,6 +78,7 @@
 	        <nav>
 		        <ul class="nav nav-justified">
 		            @if (Auth::check())
+		            <li class="primary_link"><a href="{{ url('/dashboard') }}"><img src="{{ asset('/img/menu/dashboard_white.png') }}" class="menu_icon">Dashboard</a></li>
 		            <li class="primary_link"><a data-toggle="modal" data-target="#ModalSearch"><img src="{{ asset('/img/menu/search_white.png') }}" class="menu_icon">Search</a></li>
 		            <li class="primary_link dropdown">
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/browse_white.png') }}" class="menu_icon">Browse <span class="caret"></span></a>
@@ -80,7 +87,7 @@
 		                    <li><a href="{{ url('/browse/courses') }}"><img src="{{ asset('/img/menu/course_white.png') }}" class="menu_icon">By Course</a></li>
 		                    <li><a href="{{ url('/browse/students') }}"><img src="{{ asset('/img/menu/student_white.png') }}" class="menu_icon">By Student</a></li>
 		                    <li><a href="{{ url('year') }}"><img src="{{ asset('/img/menu/academic_term_year_white.png') }}" class="menu_icon">By Year</a></li>
-		                    <li><a href="{{ url('dashboard') }}"><img src="{{ asset('/img/menu/outlines_white.png') }}" class="menu_icon">My Outlines</a></li>
+		                    <li><a href="{{ url('browse/my-outlines') }}"><img src="{{ asset('/img/menu/outlines_white.png') }}" class="menu_icon">My Outlines</a></li>
 		                </ul>
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
@@ -114,7 +121,7 @@
 		
 		<!-- Footer -->
 		<footer class="footer">
-			<p class="centered">&copy; The Regents of the University of California. All Rights Reserved.</p>
+			<p class="centered">&copy; None, Because Open Source &lt;3.</p>
 		</footer>
 		<!-- Footer -->
       
@@ -210,8 +217,8 @@
 		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
 		<div>Icons made by <a href="http://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
 		<div>Icons made by <a href="http://www.flaticon.com/authors/fermam-aziz" title="Fermam Aziz">Fermam Aziz</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>http://www.flaticon.com/free-icon/cogwheel-outline_57818#
+		<div>Icons made by <a href="http://www.flaticon.com/authors/situ-herrera" title="Situ Herrera">Situ Herrera</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 	-->
-		  
 	
 </body>
 </html>

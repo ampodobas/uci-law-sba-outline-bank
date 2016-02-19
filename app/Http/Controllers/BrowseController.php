@@ -131,6 +131,13 @@ class BrowseController extends Controller {
 		
 	}
 	
+	public function browse_my_outlines()
+	{
+            
+		return view('browse.browse_my_outlines');
+		
+	}
+	
 	
 	public function search_by_course(Request $request)
 	{
