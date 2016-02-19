@@ -66,7 +66,7 @@ use Auth;
 			            ["Spring Semester 2016", <?php echo $query_spring_2016; ?>],
 			        ],
 			        type : 'donut',
-			        onclick: function (d, i) { console.log("onclick", d, i); },
+					onclick: function (d, i) { console.log("onclick", d, i); },
 			        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
 			        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
 			    },
