@@ -28,20 +28,24 @@ class FileEntryController extends Controller {
 	}
 	
 
-	public function add() {
+	public function add(Request $request) {
 		
 		$entry = new Fileentry();
 		
 		$file = Request::file('filefield');
+		$professor_name = Request::input('professor_name');
+	
+		
 		
 		// Build the validation input as an array
-	    $file_validation = array('filefield' => $file);
+	    $file_validation = array('filefield' => $file, 'professor_name' => $professor_name);
 	
 
 	    // Within the ruleset, the filefield input is required, must be a PDF mime, and must be under 8 megabytes in size
 	    //|mimes:pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document
 	    $rules = array(
-	        'filefield' => 'required|mimes:pdf,doc,docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+	        'filefield' => 'required|mimes:pdf,doc,docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+			'professor_name' => 'required'
 	    );
 	
 	    // Pass the input and rules into the validator

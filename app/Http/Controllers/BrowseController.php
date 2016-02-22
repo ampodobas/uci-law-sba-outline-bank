@@ -197,7 +197,7 @@ class BrowseController extends Controller {
 		$year = Input::get('year');
 
 
-		$query = FileEntry::whereCourseNameOrProfessorNameOrAcademicTermOrYear(Input::get('professor_name'), Input::get('professor_name'), Input::get('academic_term'), Input::get('year'))->get();
+		$query = FileEntry::whereProfessorNameOrCourseNameOrAcademicTermOrYear(Input::get('professor_name'), Input::get('professor_name'), Input::get('academic_term'), Input::get('year'))->get();
 
 		/* 
 			http://www.neontsunami.com/posts/dynamic-where-clauses-and-find-methods-in-eloquent-(laravel-4)
