@@ -92,6 +92,14 @@
 		            </li>
 		            <li class="primary_link"><a href="{{ url('/upload') }}"><img src="{{ asset('/img/menu/upload_white.png') }}" class="menu_icon">Upload</a></li>
 		            
+		             <!-- Non-Admin Password Reset -->
+			         <?php
+				        /* if the role_id is NOT 1 (ergo, not an admin-level role), then show the icon that invokes the non-admin password reset modal */
+				        foreach ($if_admin as $item) { if (!($item->role_id == 1)) { ?>
+				        <li class="primary_link"><a data-toggle="modal" data-target="#ModalPasswordReset"><img src="{{ asset('/img/menu/admin_white.png') }}" class="menu_icon"></a></li>   
+			         <?php } } ?>
+			         <!-- Non-Admin Password Reset -->
+			         
 		            <?php /* START LOOP: if the role_id is 1, then show the admin links */ foreach ($if_admin as $item) { if ($item->role_id == 1) { ?>
 			            <li class="primary_link dropdown">
 			                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/menu/admin_white.png') }}" class="menu_icon">Admin <span class="caret"></span></a>
@@ -105,6 +113,9 @@
 			                </ul>
 			            </li>      
 			         <?php } } /* END LOOP: if the role_id is 1, then show the admin links */  ?>
+			         
+			        
+			         
 		            <li class="primary_link"><a href="{{ url('/auth/logout') }}"><img src="{{ asset('/img/menu/logout_white.png') }}" class="menu_icon">Logout</a></li>
 					@endif
 				</ul>
@@ -208,7 +219,64 @@
 	</div><!-- ./modal-dialog -->
 </div><!-- ./modal .fade -->
 <!-- Modal: Search -->
-  
+
+<!-- Modal: Password Reset -->
+<div class="modal fade" id="ModalPasswordReset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title modal_search" id="myModalLabel"><i class="fa fa-search"></i> Password Reset</h4>
+			</div><!-- ./modal-header -->
+			
+			<div class="modal-body">
+				
+	
+					    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				
+	
+							<div class="form-group">
+								<label class="col-md-4 control-label">E-Mail Address</label>
+								<div class="col-md-6">
+									<input class="form-control" id="disabledInput" name="email" type="text" value="<?php echo Auth::user()->email; ?>" disabled>
+								</div>
+							</div>
+	
+							<div class="form-group">
+								<label class="col-md-4 control-label">Password</label>
+								<div class="col-md-6">
+									<input type="password" class="form-control" name="password">
+								</div>
+							</div>
+	
+							<div class="form-group">
+								<label class="col-md-4 control-label">Confirm Password</label>
+								<div class="col-md-6">
+									<input type="password" class="form-control" name="password_confirmation">
+								</div>
+							</div>
+	
+							<div class="form-group">
+								<div class="col-md-6 col-md-offset-4">
+									<button type="submit" class="btn btn-primary">
+										Reset Password
+									</button>
+								</div>
+							</div>
+						</form>
+				
+					{!! Form::close() !!}
+				
+					
+				</form>
+			</div><!-- modal-body -->
+		</div><!-- ./modal-content -->
+	</div><!-- ./modal-dialog -->
+</div><!-- ./modal .fade -->
+<!-- Modal: Password Reset -->
+ 
+
 	<!--
 		Features page icons made by: <a href="https://www.iconfinder.com/icons/532734/control_data_database_database_settings_gear_options_preferences_settings_icon#size=128> with corresponding license listed there.</a>
 		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>

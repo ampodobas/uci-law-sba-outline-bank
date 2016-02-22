@@ -33,6 +33,8 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 
 /* Non-Auth (Features) */
 
@@ -43,7 +45,6 @@ Route::get('features', function () {
 
 
 /* File Uploads and Downloads (FileEntry) */
-
 Route::group(['middleware' => ['auth', 'authorize']], function(){
 	Route::get('upload', 'FileEntryController@index');
 	

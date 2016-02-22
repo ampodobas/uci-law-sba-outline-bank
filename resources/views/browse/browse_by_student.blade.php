@@ -38,7 +38,7 @@ use DB;
 			foreach ($array_alphabet as $item)
 			{
 				#$query = DB::table('file_entries')->where('submitting_user_last_name', 'like', ''.$item.'%')->get();
-				$query = FileEntry::where('submitting_user_last_name', 'like', ''.$item.'%')->get();
+				$query = FileEntry::where('submitting_user_last_name', 'like', ''.$item.'%')->where('submitting_user_reveal_id', '=', 'yes')->get();
 				
 				$array_alphabet_2 = [];
 				

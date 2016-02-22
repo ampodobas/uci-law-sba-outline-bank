@@ -37,9 +37,11 @@ class FileEntryController extends Controller {
 		// Build the validation input as an array
 	    $file_validation = array('filefield' => $file);
 	
+
 	    // Within the ruleset, the filefield input is required, must be a PDF mime, and must be under 8 megabytes in size
+	    //|mimes:pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document
 	    $rules = array(
-	        'filefield' => 'required|mimes:pdf'
+	        'filefield' => 'required|mimes:pdf,doc,docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 	    );
 	
 	    // Pass the input and rules into the validator
@@ -50,7 +52,7 @@ class FileEntryController extends Controller {
 	    {
 	        
 	        //Error message
-	        Flash::error('You must upload a PDF file under 8 megabytes in size. Please try again.');
+	        Flash::error('Oops, something went wrong. Please select a professor name,  a course name, and a Word (.docx only) or PDF file (which must be under 8MB in total size).');
 	        
 	        return redirect('upload');
 	    } else
@@ -70,6 +72,8 @@ class FileEntryController extends Controller {
 			$entry->submitting_user_id = Input::get("submitting_user_id");
 			$entry->submitting_user_first_name = Input::get("submitting_user_first_name");
 			$entry->submitting_user_last_name = Input::get("submitting_user_last_name");
+			$entry->submitting_user_reveal_id = Input::get("submitting_user_reveal_id");
+			$entry->submitting_user_projected_graduation_year = Input::get("submitting_user_projected_graduation_year");
 			
 			$entry->mime = $file->getClientMimeType();
 			$entry->original_filename = $file->getClientOriginalName();

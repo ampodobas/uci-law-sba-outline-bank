@@ -77,6 +77,14 @@ class UsersController extends Controller {
 		$userRoles = $user->roles();
 		return view('users.edit', compact('user', 'roles', 'userRoles'));
 	}
+	
+	public function password_reset_non_admin($id)
+	{
+		$user = $this->user->find($id);
+		$roles = $this->role->all();
+		$userRoles = $user->roles();
+		return view('users.non-admin-password-reset', compact('user', 'roles', 'userRoles'));
+	}
 
 	/**
 	 * @param $id

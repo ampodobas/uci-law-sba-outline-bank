@@ -14,7 +14,7 @@
 	
 	<!-- Nav tabs -->
 	<div class="row">
-	  <ul class="nav nav-tabs year_ul" role="tablist">
+	  <ul class="nav nav-pills year_ul" role="tablist">
 	    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">2016<label class="label label-warning pull-right label_count"><?php echo $count_year_2016; ?></a></li>
 	    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">2015<label class="label label-warning pull-right label_count"><?php echo $count_year_2015; ?></a></li>
 	    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">2014<label class="label label-warning pull-right label_count"><?php echo $count_year_2014; ?></a></li>
@@ -35,7 +35,7 @@
 				<p class="lead year">2016</p>
 				@include('partials.partial_table_1of3')
 					@foreach($year_2016 as $item)
-						@include('partials.partial_table_1of3')
+						@include('partials.partial_table_2of3')
 					@endforeach
 				@include('partials.partial_table_3of3')	
 			</div><!-- ./year_tabs_container -->

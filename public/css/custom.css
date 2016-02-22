@@ -45,6 +45,10 @@ body {
 	text-align: center !important;
 }
 
+.justified {
+	text-align: justify !important;
+}
+
 .glyphicon {
 	margin-right: 10px;
 }
@@ -203,6 +207,10 @@ img.page_icon {
 
 
 /* Page: Upload */
+
+p.upload_instructions {
+	font-size: 15px;
+}
 
 .upload_step_row {
 	margin-top: 25px;
@@ -645,6 +653,7 @@ p.year {
 
 .browse_by_student_row a {
 	cursor: hand !important;	
+	text-align: center;
 }
 
 h1.last_name_initial {
