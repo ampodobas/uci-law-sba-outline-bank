@@ -53,6 +53,9 @@ body {
 	margin-right: 10px;
 }
 
+span.stronger {
+	font-weight: 400;
+}
 
 
 /* Background Image Slideshow */
@@ -459,6 +462,12 @@ h4.modal_search .fa-search {
 
 .fa-cloud-upload {
 	margin-right: 15px;
+}
+
+p.search_all_p {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 300 !important;
 }
 
 

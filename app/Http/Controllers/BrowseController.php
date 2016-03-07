@@ -196,24 +196,46 @@ class BrowseController extends Controller {
 		$academic_term = Input::get('academic_term');
 		$year = Input::get('year');
 
+		$builder = FileEntry::query();
 
-		$query = FileEntry::whereProfessorNameOrCourseNameOrAcademicTermOrYear(Input::get('professor_name'), Input::get('professor_name'), Input::get('academic_term'), Input::get('year'))->get();
+		if (Input::has('course_name')) {
+		    $queryString = Input::get('course_name');
+		    $builder->where('course_name', '=', "$course_name");
+		}
+		if (Input::has('professor_name')) {
+		    $queryString = Input::get('professor_name');
+		    $builder->where('professor_name', '=', "$professor_name");
+		}
+		if (Input::has('academic_term')) {
+		    $queryString = Input::get('academic_term');
+		    $builder->where('academic_term', '=', "$academic_term");
+		}
+		if (Input::has('year')) {
+		    $queryString = Input::get('year');
+		    $builder->where('year', '=', "$year");
+		}
 
-		/* 
-			http://www.neontsunami.com/posts/dynamic-where-clauses-and-find-methods-in-eloquent-(laravel-4)
-			User::firstByAttributes(['email' => 'dwight@example.com', 'first_name' => 'Dwight']);
-		*/
+		$query = $builder->orderBy('created_at', 'DESC')->get();
 		
-
+		
 		$join_get_full_name = DB::table('file_entries')
             ->join('users', 'users.email', '=', 'file_entries.submitting_user_email')
             ->select('users.user_first_name', 'users.user_last_name')
             ->take(1)
             ->get();
         
-		return view('browse.search_results_all', compact('query', 'course_name', 'professor_name', 'academic_term', 'year', 'join_get_full_name'));
+        return view('browse.search_results_all', [
+			'query' => $query,
+			'builder' => $builder,
+			'course_name' => $course_name,
+	        'professor_name' => $professor_name,
+	        'academic_term' => $academic_term,
+	        'year' => $year
+		]); 
 		
 	}
+		
+
 	
 	public function year()
 	{
