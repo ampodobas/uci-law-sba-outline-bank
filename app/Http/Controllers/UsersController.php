@@ -85,7 +85,22 @@ class UsersController extends Controller {
 		$userRoles = $user->roles();
 		return view('users.non-admin-password-reset', compact('user', 'roles', 'userRoles'));
 	}
+	
+	public function change_password_non_admin(UpdateUserRequest $request, $id)
+	{
+		$user = $this->user->find($id);
+		
+		if($request->get('password'))
+		{
+			$user->password = $request->get('password');
+		}
+		$user->save();
+		
+		Flash::success('Password successfully changed');
 
+		return redirect('/dashboard');
+	}
+	
 	/**
 	 * @param $id
 	 * @param UpdateUserRequest $request

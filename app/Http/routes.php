@@ -42,6 +42,10 @@ Route::get('features', function () {
     return view('non-auth.features');
 });
 
+/* Non-Admin Password Change */
+
+Route::post('post_non_admin_pass_change', 'UsersController@change_password_non_admin');
+
 
 
 /* File Uploads and Downloads (FileEntry) */

@@ -6,11 +6,13 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-        "zizaco/entrust": "dev-laravel-5",
+        "zizaco/entrust": "1.4.1",
         "laravelcollective/html": "~5.0",
         "bosnadev/repositories": "0.*",
         "laracasts/flash": "1.3.3",
-        "doctrine/dbal": "~2.3"
+        "doctrine/dbal": "~2.3",
+        "guzzlehttp/guzzle": "~5.3",
+		"mailgun/mailgun-php": "~1.7.2"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

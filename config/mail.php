@@ -53,8 +53,8 @@ return [
 	| used globally for all e-mails that are sent by your application.
 	|
 	*/
-
-	'from' => ['address' => null, 'name' => null],
+	
+	'from' => ['address' => 'lawsba@lawnet.uci.edu', 'name' => 'UCI Law SBA'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME'),
+	'username' => env('postmaster@sandboxe99d023b77c94da5851d0978f1ee14e4.mailgun.org'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD'),
+	'password' => env('d2e4169e93096ed41f0ee650536422d1'),
 
 	/*
 	|--------------------------------------------------------------------------

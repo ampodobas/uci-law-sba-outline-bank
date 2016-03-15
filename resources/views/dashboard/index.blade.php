@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 
+use Form;
 use Carbon\Carbon;
 use Redirect;
 use DB;
@@ -29,6 +30,28 @@ use Auth;
 		<h2>Welcome, {{ Auth::user()->user_first_name }}</h2>
 		<p class="centered"><strong>E-Mail:</strong> {{ Auth::user()->email }}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<strong>Joined On:</strong> {{ Auth::user()->created_at }}</p>		
 	</div><!-- ./row .page_title_icon_container -->
+
+<!--
+<div class="well">
+
+	 {!! Form::open(array('url' => 'post_non_admin_pass_change', 'class' => 'form-horizontal', 'method' => 'POST')) !!}
+
+    <div class="form-group">
+        {!! Form::label('password', 'Password') !!}
+        {!! Form::password('password', ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('password_confirmation', 'Password confirmation') !!}
+        {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+    </div>
+
+    {!! Form::close() !!}
+</div><!-- ./well -->
 
 
 <div class="row">

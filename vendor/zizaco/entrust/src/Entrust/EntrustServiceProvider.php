@@ -33,7 +33,6 @@ class EntrustServiceProvider extends ServiceProvider
 
         // Register commands
         $this->commands('command.entrust.migration');
-        $this->commands('command.entrust.classes');
     }
 
     /**
@@ -60,6 +59,8 @@ class EntrustServiceProvider extends ServiceProvider
         $this->app->bind('entrust', function ($app) {
             return new Entrust($app);
         });
+        
+        $this->app->alias('entrust', 'Zizaco\Entrust\Entrust');
     }
 
     /**
@@ -69,11 +70,8 @@ class EntrustServiceProvider extends ServiceProvider
      */
     private function registerCommands()
     {
-        $this->app->bindShared('command.entrust.migration', function ($app) {
+        $this->app->singleton('command.entrust.migration', function ($app) {
             return new MigrationCommand();
-        });
-        $this->app->bindShared('command.entrust.classes', function ($app) {
-            return new ClassCreatorCommand();
         });
     }
 
@@ -97,8 +95,7 @@ class EntrustServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'command.entrust.migration',
-            'command.entrust.classes'
+            'command.entrust.migration'
         ];
     }
 }
